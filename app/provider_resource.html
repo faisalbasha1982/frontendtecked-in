@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+  <!-- select2 -->
+  <link href="bower_components/select2/dist/css/select2.min.css" rel='stylesheet'/>
+  <link href="bower_components/sweetalert2/dist/sweetalert2.min.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="js/lib/core-2.4.1.js" defer></script>
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/sweetalert2/dist/sweetalert2.all.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/clipboard/dist/clipboard.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/post-filter-component.js" defer></script>
+  <script src="js/pages/provider-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/common-link-resource.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-provider-resource" data-role="provider" class="page-dashboard" data-nav-side-panel="false">
+
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main -->
+  <main class="main-content">
+    <!-- stats banner -->
+
+    <div class="tabs" data-tabs="content-feed">
+      <!-- tabs navigation -->
+      <div class="gradient-row">
+        <div class="container">
+          <ul class="tabs-nav" data-tabs-navigation="content-feed">
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-manager">Link Resources</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- tabs content -->
+      <div class="tabs-content" data-tabs-content="content-feed">
+        <div class="tabs-panel" id="tab-manager">
+          <div id="post-filter-container"></div>
+          <div class="container clearfix">
+            <h3 class="tab-heading">Link Resource</h3>
+            <div class="subscribers-container">
+              <div id="table-root"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<div id="modal-resource-dialog" class="modal-save-to-vault" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3 class="dialog-title">Create </h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="user-input">
+
+          <div class="input-wrapper input-subject">
+            <p class="label">Title</p>
+            <input type="text" placeholder="title *" name="title">
+          </div>
+
+          <div class="input-wrapper input-subject">
+            <p class="label">Link</p>
+            <input type="text" placeholder="link *" name="link">
+          </div>
+
+          <div class="input-wrapper input-keywords">
+            <p class="label">Description</p>
+            <textarea placeholder="Description" name="discription"></textarea>
+          </div>
+        </div>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-sure-send">
+            <span class="sure-btn-title">Send</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

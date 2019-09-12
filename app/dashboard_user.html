@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <!-- select2 -->
+  <link href="bower_components/select2/dist/css/select2.min.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/post-filter-component.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-dashboard.js" type="text/javascript" defer></script>
+
+
+</head>
+<body id="page-dashboard-user" data-role="user" class="page-dashboard" data-nav-side-panel="false">
+
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main -->
+  <main class="main-content">
+    <!-- stats banner -->
+    <div class="stats-banner-wrapper">
+      <div class="container">
+        <div class="stats-banner">
+          <ul class="stats-list">
+            <li>
+              <p class="stat-value color-pink categories-number">N/A</p>
+              <p class="stat-title">Favorite Categories</p>
+            </li>
+            <li>
+              <p class="stat-value color-green contents-number">N/A</p>
+              <p class="stat-title">Your Saved Contents</p>
+            </li>
+            <li>
+              <p class="stat-value color-orange providers-number">N/A</p>
+              <p class="stat-title">Favorite Tech. Providers</p>
+            </li>
+            <li>
+              <p class="stat-value color-blue read-number">N/A</p>
+              <p class="stat-title">No. of Contents Read</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" data-tabs="content-feed">
+      <!-- tabs navigation -->
+      <div class="gradient-row">
+        <div class="container">
+          <ul class="tabs-nav" data-tabs-navigation="content-feed">
+            <li class="tabs-title"><a href="javascript:;" class="is-active" data-tab-target="#tab-category-feed">My
+              Category Feed</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-recommended-content">Recommended
+              Content</a></li>
+            <!--<li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-recently-read">Recently Read</a></li>-->
+          </ul>
+        </div>
+      </div>
+      <div id="post-filter-container"></div>
+      <!-- tabs content -->
+      <div class="tabs-content" data-tabs-content="content-feed">
+        <div class="tabs-panel is-active" id="tab-category-feed">
+
+          <div class="search-filter-sort-row-wrapper"></div>
+          <!-- content feed -->
+          <div class="content-feed-wrapper" data-load-more>
+            <div class="container clearfix">
+              <h3 class="tab-heading">My Category Feed</h3>
+              <ul class="content-feed-list fav-post-list" data-load-more-list data-filterable-sortable>
+              </ul>
+              <a href="javascript:;" class="btn btn-load-more fav-btn-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab recommended content -->
+        <div class="tabs-panel" id="tab-recommended-content">
+          <div class="search-filter-sort-row-wrapper">
+          </div>
+          <!-- content feed -->
+          <div class="content-feed-wrapper" data-load-more>
+            <div class="container clearfix">
+              <h3 class="tab-heading">Recommended Content</h3>
+              <ul class="content-feed-list recommended-posts-list" data-load-more-list data-filterable-sortable>
+              </ul>
+              <a href="javascript:;" class="btn btn-load-more recommended-btn-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab reacently read -->
+        <div class="tabs-panel" id="tab-recently-read">
+          <div class="search-filter-sort-row-wrapper">
+          </div>
+
+          <!-- content feed -->
+          <div class="content-feed-wrapper" data-load-more>
+            <div class="container clearfix">
+              <h3 class="tab-heading">Recently Read</h3>
+              <ul class="content-feed-list recent-posts-list" data-load-more-list data-filterable-sortable>
+              </ul>
+              <a href="javascript:;" class="btn btn-load-more recent-load-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

@@ -1,0 +1,36 @@
+$font-primary: "Montserrat", Arial, sans-serif;
+$font-secondary: "Titillium", Arial, sans-serif;
+
+$theme-primary-color: #2ba0ad;
+$error-color: #86181d;
+
+$bg-gradient: linear-gradient(to right, #4ab7c3, #1f79bf);
+$box-shadow: 0 0 54px 6px rgba(0, 0, 0, 0.09);
+
+$bg-header: #fff;
+
+$bg-footer-top: #122325;
+$bg-footer-bottom: #0f1c1e;
+
+$bg-main-content-desktop: #fafafa;
+$bg-main-content-mobile: #efefef;
+
+$bg-btn-primary: $bg-gradient;
+
+$primary-text-color: #616161;
+$link-text-color: $theme-primary-color;
+
+$input-placeholder-color: #b8b8b8;
+$input-border-color: #d8d8d8;
+
+$color-custom-scroll: #ecba00;
+
+
+/*** breakpoints ***/
+$breakpoints: (
+        sss: 320px,
+        verysmall: 360px,
+        small: 768px,
+        medium: 992px,
+        large: 1200px
+);

@@ -1,0 +1,71 @@
+
+.toggle-switch {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  
+  input {
+    display: none;
+    
+    &:checked + .toggle-handle {
+      background-color: #4bb7c4;
+      
+      &:before {
+        transform: translateX(16px);
+      }
+    }
+  }
+  
+  .toggle-handle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2px;
+    background-color: #c9c9c9;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+    &:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 5px;
+      bottom: 5px;
+      border-radius: 2px;
+      background-color: #fff;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  .toggle-switch {
+    width: 58px;
+    height: 32px;
+    
+    input:checked + .toggle-handle:before {
+      transform: translateX(27px);
+    }
+    
+    .toggle-handle {
+      border-radius: 3px;
+      
+      &:before {
+        width: 21px;
+        height: 21px;
+        border-radius: 3px;
+        bottom: 6px;
+      }
+    }
+  }
+}

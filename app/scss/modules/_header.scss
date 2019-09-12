@@ -1,0 +1,449 @@
+@import "../helpers/mixins";
+
+.nav-menu-container {
+
+  position: relative;
+
+  &:hover {
+    .nav-menu {
+      display: flex;
+    }
+  }
+
+  &:hover {
+    .nav-menu {
+      display: flex;
+    }
+  }
+  @media (hover: none) {
+    &:hover {
+      .nav-menu {
+        display: none;
+      }
+    }
+  }
+  .nav-menu {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+    left: -16px;
+    width: 240px;
+    background-color: white;
+    .item {
+      padding: 5px 16px 5px 16px;
+      background: white;
+      margin: 5px;
+      border-bottom: 1px dashed gainsboro;
+      display: flex;
+      align-items: center;
+      &:first-child {
+        margin-top: 24px;
+      }
+      &:last-child {
+        margin-bottom: 16px;
+      }
+    }
+    @media (hover: hover) {
+      &:hover {
+        display: flex;
+      }
+    }
+  }
+}
+
+.main-header-wrapper {
+  background-color: $bg-header;
+
+  .container {
+    max-width: 1280px;
+    padding: 0;
+  }
+}
+
+#main-header {
+  height: 69px;
+  padding: 0 27px 0 19px;
+  display: flex;
+  align-items: center;
+
+  .active-page-title {
+    padding-left: 16px;
+    flex-grow: 1;
+    font-size: 20px;
+    font-weight: 500;
+    color: $link-text-color;
+  }
+
+  .icon-search {
+    @include icon(25px, 25px);
+    margin-left: 10px;
+  }
+
+  .notifications-wrapper {
+    position: relative;
+    margin-left: 32px;
+
+    .btn-notification {
+      position: relative;
+      display: block;
+
+      .number {
+        position: absolute;
+        top: -4px;
+        right: -8px;
+        width: 18px;
+        height: 18px;
+        box-sizing: content-box;
+        font-size: 12px;
+        color: #fff;
+        background-color: $theme-primary-color;
+        border: 1px solid #fff;
+        border-radius: 50%;
+      }
+    }
+
+    .notification-popup {
+      position: absolute;
+      right: -20px;
+      top: calc(100% + 23px);
+      width: 350px;
+
+      .popup-body {
+        padding-left: 8px;
+
+        .notifications-list {
+          padding-top: 2px;
+
+          li {
+            padding: 9px 0;
+            border-bottom: 1px solid #ececec;
+            display: flex;
+
+            .notification-txt {
+              width: 100%;
+              flex-grow: 1;
+              flex-shrink: 1;
+              line-height: 1.4;
+              color: #808080;
+              padding-right: 15px;
+            }
+
+            .time {
+              padding-left: 11px;
+              font-size: 11px;
+              color: #b3b3b3;
+              line-height: 1.6;
+              position: relative;
+
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 31px;
+                border-left: 1px solid #dadada;
+              }
+            }
+          }
+        }
+      }
+
+      .buttons-row {
+
+        .btn-clear {
+          height: 39px;
+        }
+      }
+    }
+
+    @include iphone5{
+      .notification-popup{
+        width: 305px;
+      }
+    }
+  }
+
+  .logo, .primary-nav, .logged-in-user-info, .btn-logout, .btn-add-content {
+    display: none;
+  }
+}
+
+
+
+@include iphone5{
+  #main-header {
+    padding: 0 18px 0 19px;
+    .notifications-wrapper{
+      margin-left: 18px;
+    }
+  }
+}
+
+@include respond-to(medium) {
+  #main-header {
+    height: 63px;
+    padding-right: 0;
+
+    .logo {
+      display: block;
+
+      img {
+        width: 181px;
+        height: 34px;
+      }
+    }
+
+    .icon-toggle-sidebar, .active-page-title, .icon-back {
+      display: none;
+    }
+
+    /*** primary nav ***/
+    .primary-nav {
+      display: block;
+      flex-grow: 1;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+          margin: 0 15px;
+
+          a {
+            color: #6d6d6d;
+
+            &.active {
+              color: $link-text-color;
+              font-weight: 500;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+
+            &:not(.active):hover {
+              color: $link-text-color;
+            }
+          }
+        }
+      }
+    }
+
+    .icon-search {
+      @include icon(19px, 20px);
+    }
+
+    .notifications-wrapper {
+      margin-left: 22px;
+
+      .btn-notification {
+
+        .number {
+          font-size: 10px;
+          width: 14px;
+          height: 14px;
+          border-width: 2px;
+          top: -3px;
+          right: -7px;
+        }
+      }
+
+      .notification-popup {
+        right: -25px;
+        top: calc(100% + 22px);
+        width: 480px;
+
+        .popup-body {
+          padding-left: 8px;
+
+          .notifications-list {
+            padding-top: 0px;
+
+            li {
+              padding: 14px 0 12px;
+
+              .notification-txt {
+                font-size: 15px;
+                line-height: 1.6;
+              }
+
+              .time {
+                padding-left: 15px;
+                font-size: 13px;
+                line-height: 1.85;
+
+                &:before {
+                  height: 41px;
+                }
+              }
+            }
+          }
+        }
+
+        .buttons-row {
+
+          .btn-clear {
+            height: 41px;
+          }
+        }
+      }
+    }
+
+    .logged-in-user-info {
+      display: flex;
+      align-items: center;
+      margin-left: 25px;
+
+      .user-thumbnail {
+        margin-right: 12px;
+
+        img {
+          width: 28px;
+          height: 28px;
+          border-radius: 3px;
+        }
+      }
+
+      .user-name-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .greeting {
+          color: #7c7c7c;
+          font-style: italic;
+          margin-right: 5px;
+          margin-bottom: 6px;
+        }
+
+        .user-name {
+          color: $link-text-color;
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .btn-logout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 62px;
+      background-color: #f6f6f6;
+      margin-left: 20px;
+    }
+  }
+
+  /*** header for tech provider ***/
+  [data-role="provider"] {
+
+    #main-header {
+
+      .btn-add-content {
+        display: flex;
+        width: 140px;
+        margin-left: 22px;
+        font-size: 14px;
+        font-weight: 400;
+
+        .add-sign {
+          font-size: 28px;
+          position: relative;
+          bottom: 1px;
+          margin-right: 12px;
+        }
+      }
+
+      .logged-in-user-info {
+        margin-left: 18px;
+        .user-name-wrapper {
+          flex-direction: column;
+
+          .greeting {
+            margin-bottom: 6px;
+          }
+          #user-name {
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .btn-logout {
+        width: 50px;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @include ipad-pro {
+    #main-header {
+      .logo {
+        display: none;
+      }
+      .primary-nav {
+        ul {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(large) {
+
+  #main-header {
+
+    .primary-nav {
+
+      ul li {
+        margin: 0 20px;
+      }
+    }
+
+    .notifications-wrapper {
+      margin-left: 32px;
+    }
+
+    .logged-in-user-info {
+      margin-left: 37px;
+
+      .user-name-wrapper {
+        flex-direction: row;
+
+        .greeting {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .btn-logout {
+      margin-left: 24px;
+    }
+  }
+
+  /*** header for tech provider ***/
+  [data-role="provider"] {
+
+    #main-header {
+
+      .btn-add-content {
+        width: 156px;
+        margin-left: 44px;
+      }
+
+      .logged-in-user-info {
+        margin-left: 27px;
+      }
+
+      .btn-logout {
+        margin-left: 22px;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+
+.login-signup-banner-wrapper {
+  width: 100%;
+  background: url(../img/bg-home-banner.jpg) no-repeat;
+  background-size: cover;
+  
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.login-signup-banner {
+  height: 342px;
+  text-align: center;
+  
+  .buttons-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    margin-bottom: 22px;
+    
+    .btn-home {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+  }
+  
+  .logo {
+    
+    img {
+      width: 201px;
+      height: 102px;
+    }
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  .login-signup-banner {
+    height: 457px;
+    
+    .buttons-row {
+      padding-top: 16px;
+      
+      .btn-home {
+        width: 39px;
+        height: 39px;
+      }
+    }
+    
+    .logo {
+      
+      img {
+        width: 231px;
+        height: 113px;
+      }
+    }
+  }
+}

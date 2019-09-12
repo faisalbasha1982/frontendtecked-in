@@ -1,0 +1,240 @@
+
+.membership-plan-box {
+  width: 259px;
+  height: 345px;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  border-radius: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 30px 22px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  .membership-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #121212;
+    margin-bottom: 8px;
+  }
+  
+  .membership-tagline {
+    font-size: 12px;
+    color: #000;
+    line-height: 1.4;
+    margin-bottom: 22px;
+    width: 100%;
+  }
+  
+  .membership-charge {
+    color: #282828;
+    line-height: 38px;
+    margin-bottom: 13px;
+    position: relative;
+    
+    sub {
+      position: absolute;
+      left: 100%;
+      line-height: 1;
+      bottom: 4px;
+    }
+  }
+  
+  .membership-description {
+    font-size: 11px;
+    line-height: 1.56;
+    color: #9c9c9c;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    margin-bottom: 7px;
+  }
+  
+  .btn-learn-more {
+    color: #02a8f3;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-bottom: 13px;
+  }
+  
+  .btn-purchase {
+    width: 179px;
+    height: 35px;
+    font-size: 14px;
+  }
+  
+  &[data-plan="free"] {
+    background: #fff url(../img/bg-membership-free.jpg) no-repeat;
+    background-size: cover;
+    
+    .membership-charge {
+      font-size: 30px;
+    }
+    
+    .btn-purchase {
+      background-image: linear-gradient(to right, #4ab7c3, #1f79bf);
+    }
+  }
+  
+  &[data-plan="standard"] {
+    background: #fff url(../img/bg-membership-standard.jpg) no-repeat;
+    background-size: cover;
+    width: 285px;
+    height: 370px;
+    padding: 25px 26px 20px;
+    
+    .membership-name {
+      font-size: 28px;
+    }
+    
+    .membership-tagline {
+      font-size: 13px;
+      line-height: 1.47;
+      margin-bottom: 35px;
+    }
+    
+    .membership-charge {
+      font-size: 38px;
+      
+      sub {
+        font-size: 13px;
+      }
+    }
+    
+    .membership-description {
+      font-size: 12px;
+    }
+    
+    .btn-learn-more {
+      margin-bottom: 18px;
+    }
+    
+    .btn-purchase {
+      width: 197px;
+      height: 37px;
+      background-image: linear-gradient(to right, #fa215c, #ab1389);
+    }
+  }
+  
+  &[data-plan="professional"] {
+    background: #fff url(../img/bg-membership-pro.jpg) no-repeat;
+    background-size: cover;
+    
+    .membership-charge {
+      font-size: 36px;
+      
+      sub {
+        font-size: 12px;
+      }
+    }
+    
+    .btn-purchase {
+      background-image: linear-gradient(to right, #0abe4e, #0ac9b9);
+    }
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  .membership-plan-box {
+    width: 259px;
+    height: 410px;
+    border-radius: 3px;
+    margin-bottom: 0;
+    padding: 45px 24px 30px;
+    
+    .membership-name {
+      font-size: 29px;
+    }
+    
+    .membership-tagline {
+      margin-bottom: 26px;
+    }
+    
+    .membership-charge {
+      line-height: 46px;
+      margin-bottom: 23px;
+      
+      sub {
+        bottom: 7px;
+      }
+    }
+    
+    .membership-description {
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+    
+    .btn-learn-more {
+      margin-bottom: 13px;
+    }
+    
+    .btn-purchase {
+      height: 44px;
+      font-size: 15px;
+    }
+    
+    &[data-plan="free"] {
+      
+      .membership-charge {
+        font-size: 38px;
+      }
+    }
+    
+    &[data-plan="standard"] {
+      width: 285px;
+      height: 452px;
+      padding: 37px 27px 24px;
+      
+      .membership-name {
+        font-size: 35px;
+        margin-bottom: 11px;
+      }
+      
+      .membership-tagline {
+        font-size: 14px;
+        margin-bottom: 45px;
+      }
+      
+      .membership-charge {
+        font-size: 46px;
+        margin-bottom: 15px;
+        
+        sub {
+          font-size: 14px;
+        }
+      }
+      
+      .membership-description {
+        font-size: 13px;
+      }
+      
+      .btn-learn-more {
+        margin-bottom: 23px;
+      }
+      
+      .btn-purchase {
+        width: 197px;
+        height: 49px;
+      }
+    }
+    
+    &[data-plan="professional"] {
+      
+      .membership-charge {
+        font-size: 42px;
+        
+        sub {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

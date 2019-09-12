@@ -1,0 +1,231 @@
+
+#page-all-content {
+
+  /*** content feed ***/
+  .content-feed-wrapper {
+
+    .content-feed-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+
+      .content-feed-box {
+        margin-bottom: 15px;
+        height: 475px;
+
+        .reading-time {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          z-index: 2;
+          padding: 0 10px;
+          height: 28px;
+          background-color: rgba(0, 0, 0, 0.37);
+          font-size: 14px;
+          @extend .align-item-center;
+          border-radius: 2px;
+          color: #fff;
+        }
+
+        .feed-txt {
+          margin-bottom: 13px;
+        }
+      }
+
+      /*** category filter ***/
+      .category-filter-wrapper {
+        background-color: #fff;
+        position: relative;
+
+        .heading-row {
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border: 8px solid;
+            border-color: $theme-primary-color transparent transparent $theme-primary-color;
+          }
+
+          h4 {
+            font-size: 18px;
+            font-weight: 500;
+            color: $link-text-color;
+          }
+        }
+      }
+    }
+
+    .btn-load-more {
+      margin: 15px auto 36px;
+    }
+  }
+}
+
+
+@include respond-to(only-small) {
+
+  #page-all-content {
+
+    .top-message-bar {
+      display: none;
+    }
+
+    .search-filter-sort-row-wrapper {
+
+      .search-filter-sort-row {
+        padding-bottom: 10px;
+      }
+    }
+
+    .category-filter-wrapper {
+      width: 100%;
+      margin-bottom: 20px;
+
+      .heading-row {
+        height: 46px;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        justify-content: space-between;
+        margin: 0 6px;
+        padding: 0 12px 0 17px;
+      }
+
+      .category-filter-options {
+        display: none;
+        z-index: 10;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 426px;
+        overflow: auto;
+
+        ul {
+          padding-top: 24px;
+
+          li {
+            padding: 0 27px;
+            margin-bottom: 32px;
+
+            .checkbox {
+
+              .icon-checkbox {
+                @include icon(18px, 18px);
+              }
+
+              .checkbox-label {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      &.is-open {
+
+        .heading-row {
+          border-bottom: 1px solid #e5e5e5;
+        }
+
+        .category-filter-options {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to(medium) {
+
+  #page-all-content {
+
+    /*** content feed ***/
+    .content-feed-wrapper {
+      padding-top: 39px;
+
+      .content-feed-list {
+        justify-content: flex-start;
+        .content-feed-box {
+          margin-left: 15px;
+          margin-right: 15px;
+          margin-bottom: 44px;
+          height: 448px;
+          @include ipad-pro {
+            margin-left: 6px;
+            margin-right: 6px;
+          }
+
+          .reading-time {
+            right: 7px;
+            top: 7px;
+            border-radius: 3px;
+            height: 26px;
+            font-size: 12px;
+          }
+        }
+
+        /*** category filter ***/
+        .category-filter-wrapper {
+          width: 323px;
+          margin-bottom: 44px;
+          border-radius: 3px;
+          box-shadow: $box-shadow;
+
+          .heading-row {
+            height: 44px;
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0 23px;
+
+            h4 {
+              font-size: 16px;
+            }
+
+            .icon-dropdown-caret-3 {
+              display: none;
+            }
+          }
+
+          .category-filter-options {
+            height: 404px;
+            overflow: auto;
+
+            ul {
+              padding-top: 27px;
+
+              li {
+                padding: 0 20px;
+                margin-bottom: 29px;
+
+                .checkbox {
+
+                  .icon-checkbox {
+                    @include icon(17px, 17px);
+                  }
+
+                  .checkbox-label {
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .btn-load-more {
+        margin: -4px auto 40px;
+      }
+    }
+  }
+}

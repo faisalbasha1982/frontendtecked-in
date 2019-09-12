@@ -1,0 +1,117 @@
+<!-- search filter sort bar -->
+<div class="search-filter-sort-row-wrapper">
+  <div class="container">
+    <div class="search-filter-sort-row">
+      <div class="search-box">
+        <input type="text" class="input-search" id="post-filter-search" placeholder="Search Provider posts"/>
+        <span class="icons icon-search"></span>
+      </div>
+      <div class="filter-wrapper post-filter-panel" data-popup="filter-panel">
+        <a href="javascript:;" class="btn btn-primary btn-filter" data-popup-trigger><span
+            class="icons icon-filter"></span><span>Filter</span></a>
+        <div class="popup-box filter-panel" data-popup-content>
+          <div class="popup-head">
+            <h3>Filter Options</h3>
+            <a href="javascript:;" class="icons icon-close-grey-2" data-close-popup></a>
+          </div>
+          <div class="popup-body">
+            <div data-sub-filter="category">
+              <h3>Category :</h3>
+              <ul class="filter-categories-list">
+                <li class="master-check">
+                  <label class="checkbox">
+                    <input type="checkbox" data-id="all"/>
+                    <span class="icon-checkbox"></span>
+                    <span class="checkbox-label">All</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">Case Study</span>
+              <label class="checkbox">
+                <input type="checkbox" name="case-study"/>
+                <span class="icon-checkbox"></span>
+                <span class="checkbox-label">Case Study</span>
+              </label>
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">Lessons Learned</span>
+              <label class="checkbox">
+                <input type="checkbox" name="lessons-learned"/>
+                <span class="icon-checkbox"></span>
+                <span class="checkbox-label">Lessons Learned</span>
+              </label>
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">State</span>
+              <div class="app-select2 filter-select2">
+                <select class="filter-states-list">
+                  <option></option>
+                </select>
+              </div>
+              <!--<input id="search-state" type="text" placeholder="State"/>-->
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">Products Offered</span>
+              <input id="search-product" type="text" placeholder="Products Offered"/>
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">Services offered</span>
+              <input id="search-service" type="text" placeholder="Services offered"/>
+            </div>
+
+            <div class="filter-input">
+              <span class="txt">Additional offices</span>
+              <input id="additionalOffice" type="text" placeholder="Additional Offices"/>
+            </div>
+
+          </div>
+          <div class="buttons-row">
+            <a href="javascript:;" class="btn btn-reset"><span>Reset</span></a>
+            <a href="javascript:;" class="btn btn-primary btn-filter-action"
+               data-close-popup><span>Filter</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-sort-by-wrapper">
+        <span class="txt">Sort By</span>
+        <div class="dropdown dropdown-sort-by post-filter-sortby filter-sortby">
+          <a href="javascript:;" class="btn btn-dropdown">
+            <span class="selected-option sort-selected-option">Date created</span><span class="icons icon-dropdown-caret-1"></span>
+          </a>
+          <div class="dropdown-menu sort-dropdown">
+            <ul class="sort-dropdown-ul">
+              <li class="selected-option">
+                <a class="sort-name" data-id="publishedOn" href="javascript:;">Date created</a></li>
+              <li><a class="sort-name" data-id="readingTime" href="javascript:;">Reading Time</a></li>
+              <li><a class="sort-name" data-id="createdBy" href="javascript:;">Tech. Provider</a></li>
+              <li><a class="sort-name" data-id="articleLength" href="javascript:;">Article Length</a></li>
+              <li><a class="sort-name" data-id="title" href="javascript:;">Alphabetical</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-sort-by-wrapper show-dropdown-wrapper">
+        <span class="txt">Show</span>
+        <div class="dropdown dropdown-sort-by post-filter-sortby filter-limit">
+          <a href="javascript:;" class="btn btn-dropdown">
+            <span class="selected-option">Top 50</span><span class="icons icon-dropdown-caret-1"></span>
+          </a>
+          <div class="dropdown-menu show-dropdown">
+            <ul class="show-dropdown-ul">
+              <li class="selected-option"><a class="sort-name" data-id="top-50" href="javascript:;">Top 50</a></li>
+              <li><a class="sort-name" data-id="top-100" href="javascript:;">Top 100</a></li>
+              <li><a class="sort-name" data-id="top-0" href="javascript:;">All</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

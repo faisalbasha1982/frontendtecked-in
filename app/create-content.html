@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="js/lib/ckeditor_4.10.0_full/ckeditor.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/provider-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/create-content.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-create-content" data-role="provider" data-nav-side-panel="false">
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+  <!-- main -->
+  <main class="main-content">
+    <!-- breadcrumbs -->
+    <div class="gradient-row">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="./dashboard_provider.html">Dashboard</a>
+          <span class="current-page">Create Content</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content-wrapper">
+      <div class="container">
+        <div class="create-content-wrapper">
+          <div class="heading-row">
+            <h3 class="current-page">Create Content</h3>
+            <span class="warning-txt">*required fields</span>
+          </div>
+
+          <div class="no-content" hidden>
+            <br/>
+            <h1>404, no such content found.</h1>
+            <br/>
+          </div>
+          <form class="create-content-form">
+            <div class="user-input">
+              <div data-input="title">
+                <p class="label">Title*</p>
+                <input type="text" name="title" placeholder="Enter"/>
+              </div>
+
+              <div data-input="readingTime">
+                <p class="label">Reading Time (Minute)*</p>
+                <input type="number" name="readingTime" placeholder="Enter" min="0"/>
+              </div>
+
+              <div data-input="category">
+                <p class="label">Category*</p>
+                <div class="dropdown dropdown-category">
+                  <a href="javascript:;" class="btn btn-dropdown">
+                    <span class="selected-option placeholder">Select</span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-category">
+                    <ul>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div data-input="category">
+                <p class="label">Scheduling</p>
+                <div class="dropdown dropdown-category">
+                  <a href="javascript:;" class="btn btn-dropdown">
+                    <span class="selected-option placeholder">Loading...</span>
+                  </a>
+                  <div class="dropdown-menu">
+                    <ul>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="immediately">Immediately</a></li>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="threeDays">3 days</a></li>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="oneWeek">1 week</a></li>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="twoWeeks">2 weeks</a></li>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="threeWeeks">3 weeks</a></li>
+                      <li><a href="javascript:;" class="schedule-dropdown-item" data-id="oneMonth">1 month</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <br/>
+                <p>Content will publish at <span class="schedule-time"></span></p>
+              </div>
+
+              <div data-input="image-upload">
+                <p class="label">Image <span>(Optional, the preferred size is 1013 × 348)</span></p>
+                <div class="file-upload-wrapper">
+                  <div class="file-select">
+                    <input type="file" accept="image/*" class="input-file-select" name="image"/>
+                    <input type="text" class="" name="image-name" placeholder="Select" disabled/>
+                  </div>
+                  <a href="javascript:;" class="btn btn-browse-upload" style="visibility: hidden">Browse</a>
+                </div>
+                <div class="selected-image">
+                  <img src="#" alt="image"/>
+                </div>
+              </div>
+              <div data-input="main-content">
+                <p class="label">Content*</p>
+                <div class="editor-box">
+                  <div class="content-editor-wrapper" id="editor">
+
+                  </div>
+                </div>
+              </div>
+              <div data-input="keywords">
+                <p class="label">Keywords</p>
+                <input type="text" name="keywords" placeholder="Enter keywords and separated by comma"/>
+              </div>
+
+              <div data-input="case-study">
+                <label class="checkbox">
+                  <input type="checkbox" name="case-study"/>
+                  <span class="icon-checkbox"></span>
+                  <span class="checkbox-label">Case Study</span>
+                </label>
+              </div>
+
+              <div data-input="lessons-learned">
+                <label class="checkbox">
+                  <input type="checkbox" name="lessons-learned"/>
+                  <span class="icon-checkbox"></span>
+                  <span class="checkbox-label">Lessons Learned</span>
+                </label>
+              </div>
+
+              <div data-input="image-upload">
+                <p class="label">Attachment <span>(Optional)</span></p>
+                <div class="file-upload-wrapper">
+                  <div class="file-select">
+                    <input type="file" accept="*/*" class="input-file-select" name="attachment"/>
+                    <input type="text" class="" name="attachment-name" placeholder="Select Attachment" disabled/>
+                  </div>
+                </div>
+              </div>
+
+              <div data-input="video">
+                <p class="label">Video Link</p>
+                <input type="text" name="video" placeholder="Youtube video url"/>
+              </div>
+            </div>
+            <div class="buttons-row clearfix">
+              <a href="./dashboard_provider.html" class="btn btn-cancel"><span>Cancel</span></a>
+              <a href="javascript:;" class="btn btn-primary btn-post"><span>Post</span></a>
+              <a href="javascript:;" class="btn btn-primary btn-preview"><span>Preview</span></a>
+              <a href="javascript:;" class="btn btn-primary btn-save-as-draft"><span>Save as Draft</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<!-- page-wrapper ends -->
+
+<!-- modals -->
+<!--  save as draft confirmation modal -->
+<div id="modal-confirm-save-as-draft" class="modal-confirmation" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <h2 class="confirmation-txt">Content is Saved as Draft</h2>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-ok" data-close-modal>OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- confirm content was posted modal -->
+<div id="modal-confirm-post" class="modal-confirmation" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <h2 class="confirmation-txt">Content is successfully posted</h2>
+        <div class="buttons-row">
+          <a href="./tech-provider-details_provider.html?tab=tab-provider-posts" class="btn btn-primary btn-ok" data-close-modal>OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- preview post modal -->
+<div id="modal-preview-post" class="modal-confirmation" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="content-preview-wrapper">
+          <span class="reading-time" id="preview-reading-time">N/A</span>
+          <h4 class="content-title" id="preview-title">N/A</h4>
+          <div class="other-details">
+            <div class="category-details">
+              <span class="icons icon-category"></span>
+              <span>Category :</span>
+              <a href="javascript:;" class="category-name" id="preview-category">N/A</a>
+            </div>
+          </div>
+          <div class="content-banner-image">
+
+          </div>
+          <div class="content-description">
+            <h4>Content Description :</h4>
+            <p class="txt" id="preview-content">
+              N/A
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modals -->
+<!-- upload watting dialog -->
+<div id="modal-waitting-upload" class="modal-confirmation" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h2>File uploading...</h2>
+      </div>
+      <div class="modal-body">
+        <h4>please don't close this page until all files upload done.</h4>
+        <br/>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modals -->
+<!-- upload watting dialog -->
+<div id="preview-alert-dialog" class="modal-confirmation" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <h2 class="confirmation-txt">You need Save as Draft or Post before Preview</h2>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary" data-close-modal> OK </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Teckedin - Content-driven Technology Platform for Users and Providers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/slick-carousel/slick/slick.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/pages/home.js" defer></script>
+
+
+</head>
+<body id="page-home">
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+  <!-- home page header -->
+  <header class="home-page-header">
+    <div class="bg-image"></div>
+    <div class="buttons-row-wrapper">
+      <div class="container">
+        <div class="buttons-row">
+          <div class="btn-login-signup">
+            <a href="./login.html" class="btn btn-login"><span>Login</span></a>
+            <a href="./signup.html" class="btn btn-signup"><span>Sign Up</span></a>
+			<a href="./AboutUs.html" class="btn btn-AboutUs"><span>About Us</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-content-wrapper">
+      <div class="container">
+        <div class="header-content">
+          <a href="./home.html" class="logo">
+            <img src="./img/logo.png" alt="logo"/>
+          </a>
+          <p class="about-message">
+            <p><strong>Search, Save and Connect with the technology products, services and vendors you need.</strong></p>
+						
+            </p>
+        </div>
+      </div>
+      <div class="alert-box">
+        <div class="alert-message">
+          <p>We are all perfectly capable of doing our own searching and learning.<strong></p>
+<p>		  Being forced to give up our email address for a white paper or article may be the difference of us connecting with a company or not.</p>
+        </div>
+        <a href="./signup.html" class="btn btn-primary btn-signup">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main class="main-content">
+    <!-- how it works section -->
+    <section data-section="how-it-works">
+      <div class="container">
+        <h3 class="section-heading">How it works</h3>
+        <div class="section-content">
+          <div class="headings-row" data-tabs-navigation="how-it-works">
+            <h3 class="is-active" data-tab-target="#for-tech-users"><span class="short-txt">For Tech. Users</span><span
+                class="long-txt">For Technology Users - click photo for a short video on searching in teckedin</span></h3>
+            <h3 data-tab-target="#for-tech-providers"><span class="short-txt">For Techn. Providers</span><span
+                class="long-txt">For Technology Providers - click photo for a short video on how you can increase leads and sales</span></h3>
+          </div>
+          <div class="how-it-works-lists" data-tabs-content="how-it-works">
+            <ul class="is-active" id="for-tech-users">
+              <li>
+			 		 
+				 
+				<a href="https://www.youtube.com/watch?v=Y1rKcU3BpsU" target="_blank"> <img src="./img/tuser.jpg"/></a>
+              </li>
+			  
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-search-tech"></span>
+                  <span class="index">1</span>
+                </div>
+                <p class="step-txt">Quickly search and filter information and save to your Personal Vault.</p>
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-save-content"></span>
+                  <span class="index">2</span>
+                </div>
+                <p class="step-txt">No web tracking or advertisements.</p>
+              </li>
+			   <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-save-content"></span>
+                  <span class="index">3</span>
+                </div>
+                <p class="step-txt">Read white papers and other information without the need to give your email address.</p>
+              </li>
+			 			   
+            </ul>
+            <ul id="for-tech-providers">
+              <li>
+						
+				
+				<a href="https://www.youtube.com/watch?v=YvyS7Rh5wso" target="_blank"> <img src="./img/woman.png"/></a>
+               
+              </li>
+			  
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-upload-content"></span>
+                  <span class="index">1</span>
+                </div>
+                <p class="step-txt">Reading of your content and users connecting with you will increase, because it is on their terms and not being pushed at them.</p>
+				
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-advertise"></span>
+                  <span class="index">2</span>
+                </div>
+                <p class="step-txt">Users will have the option to subscribe to your company and can request information directly from teckedin.</p>
+              </li>
+			  <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-upload-content"></span>
+                  <span class="index">3</span>
+                </div>
+                <p class="step-txt">Improved visibility since filtered by categories, not paid ads.</p>
+            </li>	
+				
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- categories section -->
+    <section data-section="categories">
+      <div class="bg-image"></div>
+      <div class="container">
+        <h3 class="section-heading color-white">Our Categories</h3>
+        <div class="section-content">
+          <ul class="categories-list">
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- popular content -->
+    <section data-section="popular-content">
+      <div class="container">
+        <h3 class="section-heading">Popular Content<span class="large-txt"> from Our Solution Providers</span></h3>
+        <div class="section-content">
+          <ul class="content-feed-list">
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- signup section -->
+    <div class="signup-section">
+      <div class="bg-image"></div>
+      <div class="container">
+        <p class="txt">Technology content filtered by categories and your needs, not paid ads. </p>
+        <a href="./signup.html" class="btn btn-primary btn-signup">Sign Up</a>
+      </div>
+    </div>
+
+    <!-- membership plans section -->
+    <section data-section="membership-plans">
+      <div class="container">
+        <h3 class="section-heading">Membership Options</h3>
+        <div class="section-content">
+          <div class="membership-plans-wrapper">
+            <div class="membership-plan-box" data-plan="free">
+              <h3 class="membership-name">Technology Users</h3>
+              <p class="membership-tagline">Suitable for anyone that needs to research information and find resources</p>
+              <p class="membership-charge">FREE</p>
+              <p class="membership-description">
+                Think of teckedin as a virtual library. A place that you can go to that is quiet and where you can check out (save) information.
+              </p>
+               <a href="./login.html" class="btn btn-purchase">Sign up</a>
+            </div>
+            
+             
+                       <div class="membership-plan-box" data-plan="professional">
+              <h3 class="membership-name">Technology Providers</h3>
+              <p class="membership-tagline">Free at this time</p>
+              <p class="membership-charge">Monthly fee TBD</p>
+              <p class="membership-description">
+                Teckedin is free at this time. We want to be absolutely sure you are getting connections and new customers.</p> <a href="./login.html" class="btn btn-purchase">Sign up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimony section -->
+    <section data-section="testimonials">
+      <div class="container">
+        <h3 class="section-heading">What Our Service Providers and Users Say</h3>
+        <div class="section-content">
+          <ul class="testimonial-list">
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">Yes, it would be helpful if it had good search criteria (by technology, vendor / manufacturer, provider address, etc.)....oh yeah, and I didn't get unwanted "SPAM" from the system"
+                  </p>
+                </div>
+                <p class="user-name">IT Manager</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">Great idea. We still struggle with marketing and look forward to this new platform.
+                  </p>
+                </div>
+                <p class="user-name">Solution Provider</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                 
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">Awesome!  This will save technology workers many hours!  The brilliance of this project is that it brings us information direct from vendors without receiving follow up phone calls, and filling our email inbox with email."
+                  </p>
+                </div>
+                <p class="user-name">Chief Information Officer</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">We are looking forward to the increased visibility amongst users and not getting lost in Google searches.
+                  </p>
+                </div>
+				 <p class="user-name">MSP Business Owner</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                 
+                </div>
+              <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">The application looks good, and I like that I don't have to provide my personal info each time I want to download an article.
+                  </p>
+                </div>
+                <p class="user-name">Chief Information Officer</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  
+                </div>
+				<li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">Great concept and something we want to be involved in.
+                  </p>
+                </div>
+				 <p class="user-name">Channel Partner</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                 
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+<!-- page-wrapper ends -->
+
+<!-- modal - guest login modal -->
+<div id="modal-home-login" data-modal="is-closed">
+  <div class="modal">
+    <aside class="modal-aside">
+
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="logo">
+          <img src="./img/logo-header.png" alt="logo"/>
+        </div>
+        <p class="message-txt">
+          Dear Guest, log in or join to continue. Thank you.
+        </p>
+        <div class="buttons-row">
+          <a href="./login.html" class="btn btn-primary btn-login">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+  !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+  arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+  d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+  insertBefore(d,q)}(window,document,'script','_gs');
+
+  _gs('GSN-913869-W');
+</script>
+

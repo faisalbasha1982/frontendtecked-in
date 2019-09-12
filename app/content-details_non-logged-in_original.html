@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+  <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" type="text/javascript" defer></script>
+  <script src="//vjs.zencdn.net/5.19/video.min.js" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/pages/content-details.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-content-details-non-loggedin" class="page-content-details">
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+  <!-- main header -->
+  <div class="main-header-wrapper">
+    <div class="container">
+      <header id="main-header">
+        <!-- logo -->
+        <a href="./home.html" class="logo">
+          <img src="./img/logo-header.png" alt="logo"/>
+        </a>
+
+        <!-- go to previous page -->
+        <a href="javascript:history.back()" class="icons icon-back"></a>
+        <h3 class="active-page-title">Content Details</h3>
+      </header>
+    </div>
+  </div>
+
+  <!-- main -->
+  <main class="main-content">
+
+    <!-- breadcrumbs -->
+    <div class="gradient-row">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="./home.html">Home</a>
+          <span class="current-page">Content Details</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-wrapper"></div>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+
+<!-- modal - guest login modal -->
+<div id="modal-home-login" data-modal="is-closed">
+  <div class="modal">
+    <aside class="modal-aside">
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="logo">
+          <img src="./img/logo-header.png" alt="logo"/>
+        </div>
+        <p class="message-txt">
+          Ready to save content? Time to login or join.
+        </p>
+        <div class="buttons-row">
+          <a href="./login.html" class="btn btn-primary btn-login">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

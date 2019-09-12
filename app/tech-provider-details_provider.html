@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+  <!-- select2 -->
+  <link href="bower_components/select2/dist/css/select2.min.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/provider-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/post-filter-component.js" type="text/javascript" defer></script>
+  <script src="js/pages/provider-detail.js" type="text/javascript" defer></script>
+
+
+</head>
+<body id="page-tech-provider-details" data-role="provider" data-nav-side-panel="false">
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main -->
+  <main class="main-content">
+
+    <!-- breadcrumbs -->
+    <div class="gradient-row">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="./dashboard_provider.html">Dashboard</a>
+          <span class="current-page">Technical Provider Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content-wrapper">
+      <div class="container">
+        <!-- stats banner -->
+        <div class="stats-banner">
+          <div class="provider-details">
+            <div class="provider-logo">
+              <img src="./img/provider-logo-default.png" alt="logo"/>
+              <div class="upload-provider-img-container">
+                <div class="bg">
+                  <a href="javascript:;" class="btn btn-upload-provider">
+                    <span class="icons icon-camera"></span>
+                    <span>Edit</span>
+                  </a>
+                  <input class="upload-provider-img" type="file" accept="image/*">
+                </div>
+              </div>
+            </div>
+
+            <p class="provider-name">N/A</p>
+            <p class="registered-on">
+              <span class="label">Registered on: </span>
+              <span class="date">N/A</span>
+            </p>
+          </div>
+          <div class="stat-reading-time-content">
+            <p class="stat-value"><span class="short-txt">N/A</span><span class="long-txt">N/A</span></p>
+            <p class="stat-title">Reading Time content (hours)</p>
+          </div>
+          <div class="stat-total-posts">
+            <p class="stat-value number-of-posts">N/A</p>
+            <p class="stat-title">Total No. of posts</p>
+          </div>
+        </div>
+
+        <div class="tabs" data-tabs="content-feed">
+          <!-- tabs navigation -->
+          <div class="gradient-row">
+            <ul class="tabs-nav" data-tabs-navigation="content-feed">
+              <li class="tabs-title"><a href="javascript:;" class="is-active" data-tab-target="#tab-about-provider">About
+                the Provider</a>
+              <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-provider-posts">Posts
+                by this Provider</a></li>
+              </li>
+              <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-provider-setting">Setting</a></li>
+              </li>
+            </ul>
+          </div>
+          <!-- tabs content -->
+          <div class="tabs-content" data-tabs-content="content-feed">
+            <div class="tabs-panel" id="tab-provider-posts">
+              <div id="post-filter-container"></div>
+              <!-- content feed -->
+              <div class="content-feed-wrapper clearfix" data-load-more>
+                <ul class="content-feed-list" data-load-more-list data-filterable-sortable>
+                </ul>
+                <a href="javascript:;" class="btn btn-load-more"><span>Load More</span></a>
+              </div>
+            </div>
+            <!-- about provider -->
+            <div class="tabs-panel is-active" id="tab-about-provider">
+              <div class="edit-mode" hidden>
+                <form class="update-provider-form">
+                  <div class="user-input">
+
+                    <div class="title">Company Name</div>
+                    <div class="input" data-input="name">
+                      <input type="text" placeholder="Company Name"/>
+                    </div>
+
+                    <div class="title">Year in Business</div>
+                    <div class="input" data-input="yearInBusiness">
+                      <input type="number" placeholder="Year in Business"/>
+                    </div>
+                    <div class="title">Customer Service Commitment</div>
+                    <div class="input" data-input="customerServiceCommittment">
+                      <textarea placeholder="Customer Service Commitment"></textarea>
+                    </div>
+
+                    <div class="title">Contact Information (* means required)</div>
+
+                    <div class="input" data-input="street">
+                      <p class="label">Street*</p>
+                      <input type="text" placeholder="Street"/>
+                    </div>
+
+                    <div class="input" data-input="locality">
+                      <p class="label">City*</p>
+                      <input type="text" placeholder="City"/>
+                    </div>
+
+                    <div class="input app-select2 dropdown-select2" data-input="Country">
+                      <p class="label">Country*</p>
+                      <div class="dropdown dropdown-countries">
+                        <select class="countries-select2">
+                          <option></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="input app-select2 dropdown-select2" data-input="Country">
+                      <p class="label">State*</p>
+                      <div class="dropdown dropdown-countries">
+                        <select class="states-select2">
+                          <option></option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="input" data-input="postalCode">
+                      <p class="label">PostalCode*</p>
+                      <input type="text" placeholder="PostalCode"/>
+                    </div>
+
+                    <div class="input" data-input="phone">
+                      <p class="label">Phone*</p>
+                      <input type="text" placeholder="Phone Number *"/>
+                    </div>
+                    <div class="input" data-input="email">
+                      <p class="label">Email*</p>
+                      <input type="text" placeholder="Email"/>
+                    </div>
+
+                    <div class="input" data-input="website">
+                      <p class="label">Website*</p>
+                      <input type="text" placeholder="Website"/>
+                    </div>
+
+
+                    <div class="title">Products Offered</div>
+                    <div class="input" data-input="productsOffered">
+                      <textarea placeholder="Products Offered(Comma Separated)"></textarea>
+                    </div>
+
+                    <div class="title">Services Offered</div>
+                    <div class="input" data-input="servicesOffered">
+                      <textarea placeholder="Services Offered(Comma Separated)"></textarea>
+                    </div>
+
+                    <div class="title">Certifications</div>
+                    <div class="input" data-input="certifications">
+                      <textarea placeholder="Certifications(Comma Separated)"></textarea>
+                    </div>
+
+                    <div class="title">Additional States or Countries with offices</div>
+                    <div class="input" data-input="additionalOffice">
+                      <textarea placeholder="Additional States or Countries with offices(Comma Separated)"></textarea>
+                    </div>
+
+                    <div class="title">Company Overview</div>
+                    <div class="input" data-input="description">
+                      <textarea placeholder="Company Overview"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="buttons-row clearfix">
+                    <a href="javascript:;" class="btn btn-primary btn-cancel"><span>Cancel</span></a>
+                    <a href="javascript:;" class="btn btn-primary btn-save"><span>Save Provider Information</span></a>
+                  </div>
+                </form>
+              </div>
+
+              <div class="view-mode">
+                <button class="edit-btn" hidden>Edit</button>
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Year in Business</h2>
+                  <p id="yearInBusiness">N/A</p>
+                </div>
+
+                <div class="contact-info-wrapper inner-box info-box">
+                  <h2 class="info-heading">Customer Service Commitment</h2>
+                  <p id="customerServiceCommittment">N/A</p>
+                </div>
+
+                <div class="contact-info-wrapper inner-box info-box">
+                  <h2 class="info-heading">Contact Information</h2>
+                  <p id="street">N/A</p>
+                  <p><span id="country">N/A</span>, <span id="state">N/A</span>, <span id="locality">N/A</span> <span
+                    id="zipCode">N/A</span></p>
+
+                  <p id="phone">N/A</p>
+                  <!--<a id="email" class="website-link" href="javascript:;">N/A</a> <br/>-->
+                  <a id="website" href="javascript:;" class="website-link" target="_blank">N/A</a>
+                </div>
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Products Offered</h2>
+                  <p id="productsOffered">N/A</p>
+                </div>
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Services Offered</h2>
+                  <p id="servicesOffered">N/A</p>
+                </div>
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Certifications</h2>
+                  <p id="certifications">N/A</p>
+                </div>
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Additional States or Countries with offices</h2>
+                  <p id="additionalOffice">N/A</p>
+                </div>
+
+
+                <div class="contact-info-wrapper info-box">
+                  <h2 class="info-heading">Company Overview</h2>
+                  <p id="description">N/A</p>
+                </div>
+
+              </div>
+            </div>
+            <!-- Setting -->
+            <div class="tabs-panel" id="tab-provider-setting">
+              <div class="settings-wrapper">
+                <div class="container">
+                  <ul class="settings-list">
+                    <li data-setting="change-password">
+                      <span class="colored-dot"></span>
+                      <h3 class="setting-heading">Change password</h3>
+                      <div class="user-input">
+                        <div class="input-password-wrapper">
+                          <input type="password" placeholder="Current Password" name="current-password"/>
+                          <a href="javascript:;" class="icons icon-password"></a>
+                        </div>
+                        <div class="input-password-wrapper">
+                          <input type="password" placeholder="New Password" name="new-password"/>
+                          <a href="javascript:;" class="icons icon-password"></a>
+                        </div>
+                        <div class="input-password-wrapper">
+                          <input type="password" placeholder="Confirm New Password" name="confirm-new-password"/>
+                          <a href="javascript:;" class="icons icon-password"></a>
+                        </div>
+                      </div>
+                      <button class="btn-change-password">Change password</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

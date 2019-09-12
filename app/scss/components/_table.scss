@@ -1,0 +1,75 @@
+@import "../helpers/mixins";
+
+.table {
+
+  width: 100%;
+  .header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #cacaca;
+    .item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      font-weight: bold;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  .no-records {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    .item {
+      display: inline-block;
+      overflow: hidden;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 10px;
+      flex: 1;
+      align-items: center;
+      min-height: 40px;
+      padding-top: 5px;
+      word-wrap: break-word;
+      padding-bottom: 5px;
+      &__title {
+        display: none;
+      }
+    }
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  @include respond-to(only-very-small) {
+    &.table-mobile {
+      .header {
+        display: none;
+      }
+      .row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        padding-bottom: 16px;
+        .item {
+          margin-top: 0;
+          margin-bottom: 10px;
+          min-height: auto;
+          padding-top: 0;
+          padding-bottom: 0;
+          &__title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

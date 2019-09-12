@@ -1,0 +1,303 @@
+
+#page-create-content {
+
+  .main-content-wrapper {
+    padding: 12px 0 28px;
+  }
+
+  .create-content-wrapper {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: $box-shadow;
+    padding: 25px 20px 22px;
+
+    .heading-row {
+      display: none;
+    }
+
+    .create-content-form {
+
+      .btn:not(.btn-dropdown) {
+        border-radius: 4px;
+        height: 40px;
+      }
+
+      .user-input {
+        padding-bottom: 40px;
+
+        [data-input] {
+          margin-bottom: 32px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          .label {
+            font-size: 14px;
+            color: #282828;
+            margin-bottom: 13px;
+          }
+
+          input {
+            width: 100%;
+            border-radius: 4px;
+            height: 40px;
+          }
+
+          &[data-input="category"] {
+
+            .dropdown-category {
+              width: 300px;
+              height: 40px;
+
+              .btn-dropdown {
+                border-radius: 4px;
+                width: 100%;
+
+                .selected-option.placeholder {
+                  color: $input-placeholder-color;
+                }
+              }
+
+              .dropdown-menu {
+                padding-top: 40px;
+
+                li a {
+                  line-height: 33px;
+                }
+              }
+            }
+          }
+
+          &[data-input="image-upload"] {
+
+            .label {
+
+              span {
+                color: #898989;
+              }
+            }
+
+            .file-upload-wrapper {
+              display: flex;
+              justify-content: space-between;
+
+              .file-select {
+                position: relative;
+                width: calc(100% - 100px);
+
+                input[type=file] {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  opacity: 0;
+                  cursor: pointer;
+                }
+              }
+
+              .btn-browse-upload {
+                border: 1px solid #08a5e1;
+                color: #08a5e1;
+                font-weight: 400;
+              }
+            }
+
+            .selected-image {
+              display: none;
+              width: 130px;
+              margin-top: 20px;
+              padding: 15px;
+              border: 1px solid #e4e4e4;
+
+              img {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+
+          .editor-box {
+            border-radius: 3px;
+            border: 1px solid #d8d8d8;
+            overflow: hidden;
+            .cke {
+              border: none;
+              .cke_bottom {
+                border-top: 1px solid #d8d8d8;
+              }
+              .cke_top {
+                border-bottom: 1px solid #d8d8d8;
+              }
+            }
+          }
+
+        }
+      }
+
+      .buttons-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .btn {
+          font-size: 17px;
+        }
+
+        .btn-post {
+          width: 80px;
+        }
+
+        .btn-cancel {
+          border: 1px solid #08a5e1;
+          color: #08a5e1;
+          font-size: 15px;
+          font-weight: 400;
+          width: 80px;
+          margin-right: calc(100% - 160px);
+          margin-bottom: 20px;
+        }
+
+        .btn-preview {
+          order: 2;
+          margin-right: calc(100% - 234px);
+        }
+
+        .btn-save-as-draft {
+          order: 3;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to(small) {
+
+  #page-create-content {
+
+    .main-content-wrapper {
+      padding: 38px 0 73px;
+    }
+
+    .create-content-wrapper {
+      border-radius: 4px;
+      padding: 62px 63px 86px;
+
+      .heading-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e4e4e4;
+        color: #282828;
+
+        h3 {
+          font-size: 22px;
+          font-weight: 500;
+        }
+      }
+
+      .create-content-form {
+        padding-top: 35px;
+
+        .btn:not(.btn-dropdown) {
+          height: 43px;
+        }
+
+        .user-input {
+          padding-bottom: 40px;
+
+          [data-input] {
+            margin-bottom: 36px;
+
+            input {
+              height: 43px;
+            }
+
+            &[data-input="category"] {
+
+              .dropdown-category {
+                width: 300px;
+                height: 43px;
+
+                .btn-dropdown {
+
+                  .selected-option.placeholder {
+                    color: $input-placeholder-color;
+                  }
+                }
+
+                .dropdown-menu {
+                  padding-top: 43px;
+
+                  li a {
+                    line-height: 34px;
+                  }
+                }
+              }
+            }
+
+            &[data-input="image-upload"] {
+
+              .file-upload-wrapper {
+                width: 408px;
+
+                .file-select {
+                  width: calc(100% - 106px);
+                }
+
+                .btn-browse-upload {
+                  font-weight: 500;
+                }
+              }
+
+              .selected-image {
+                width: 256px;
+                height: 90px;
+                padding: 0px;
+                cursor: pointer;
+                img {
+                  margin: 2px;
+                  width: 250px;
+                  height: 84px;
+                }
+              }
+            }
+          }
+        }
+
+        .buttons-row {
+          display: block;
+
+          .btn {
+            float: right;
+            margin-left: 20px;
+          }
+
+          .btn-post {
+            order: 4;
+            width: 115px;
+          }
+
+          .btn-cancel {
+            margin: 0;
+            float: left;
+            width: 85px;
+          }
+
+          .btn-save-as-draft {
+            width: 140px;
+          }
+
+          .btn-preview {
+            width: 100px;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+@import '../helpers/mixins';
+
+/*** dashboard page common ***/
+.page-dashboard {
+
+  .stats-banner-wrapper {
+    width: 100%;
+    background: url(../img/bg-dashboard-banner.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  .stats-banner {
+    color: #fff;
+
+    .stat-value {
+      font-weight: 500;
+
+      &.color-pink {
+        color: #c813c2;
+      }
+
+      &.color-green {
+        color: #2bd99d;
+      }
+
+      &.color-orange {
+        color: #fba239;
+      }
+
+      &.color-blue {
+        color: #48c5ff;
+      }
+    }
+  }
+
+  /*** tabs content ***/
+  .tabs-content {
+
+    .content-feed-wrapper {
+
+      .content-feed-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .content-feed-box {
+          margin-bottom: 15px;
+        }
+      }
+
+      .btn-load-more {
+        margin: 15px auto 36px;
+      }
+    }
+  }
+}
+
+/*** dashboard provider ***/
+.page-dashboard-admin {
+
+  .stats-banner {
+    padding: 35px 0 44px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .stats-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      li {
+        width: 33%;
+        text-align: center;
+        position: relative;
+
+        .stat-value {
+          font-size: 65px;
+          margin-bottom: 5px;
+
+          .long-txt {
+            display: none;
+          }
+        }
+
+        .stat-title {
+          font-size: 11px;
+          line-height: 18px;
+        }
+
+        &.number-of-state {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .subscribers-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 30px;
+
+    padding-top: 20px;
+    .download-link {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+    }
+  }
+}
+
+.flex5 {
+  flex: 5 !important;
+}
+
+.flex4 {
+  flex: 4 !important;
+}
+
+.flex3 {
+  flex: 3 !important;
+}
+
+.flex2 {
+  flex: 2 !important;
+}
+
+.flex1 {
+  flex: 1 !important;
+}
+
+.flex0-5 {
+  flex: 0.5 !important;
+}
+
+.line-checkbox {
+  display: flex;
+  input {
+    margin-right: 5px;
+    -webkit-appearance: radio;
+  }
+  .radio-text {
+    cursor: pointer;
+    margin-right: 30px;
+  }
+}
+
+#page-admin-setting {
+  // tab settings
+  #tab-settings {
+    padding-bottom: 30px;
+
+    .settings-list {
+      background-color: #fff;
+      border-radius: 2px;
+      box-shadow: $box-shadow;
+      padding: 0 15px;
+
+      > li {
+        position: relative;
+        padding: 20px 15px;
+        border-bottom: 1px solid #e6e6e6;
+
+        &:last-child {
+          border: 0;
+        }
+
+        .colored-dot {
+          position: absolute;
+          left: 0;
+          top: 24px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: #4bb7c4;
+        }
+
+        .setting-heading {
+          font-size: 15px;
+          font-weight: 500;
+          color: #282828;
+        }
+
+        // change password
+        &[data-setting="change-password"] {
+
+          .user-input {
+
+            .input-password-wrapper {
+              margin-top: 17px;
+              max-width: 292px;
+              position: relative;
+
+              input {
+                height: 38px;
+                width: 100%;
+                text-align: center;
+                padding: 0 30px;
+              }
+
+              .icon-password {
+                position: absolute;
+                right: 10px;
+                top: 15px;
+              }
+            }
+          }
+          .btn-change-password {
+            height: 51px;
+            width: 207px;
+            margin-top: 30px;
+            background-color: #2480cf;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#page-admin-user {
+  #tab-notification {
+    .tips {
+      display: none;
+    }
+    .operations {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .copy-clipboard {
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+  }
+  .content-textarea {
+    height: 300px;
+  }
+}
+
+@include respond-to(medium) {
+
+  .page-dashboard {
+
+    /*** tabs content ***/
+    .tabs-content {
+
+      .content-feed-wrapper {
+
+        .content-feed-list {
+          justify-content: flex-start;
+          .content-feed-box {
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 44px;
+          }
+        }
+
+        .btn-load-more {
+          margin: 3px auto 51px;
+        }
+      }
+    }
+  }
+
+  .table {
+    min-height: 400px;
+    margin-bottom: 20px;
+  }
+
+  #page-admin-user {
+    #tab-notification {
+      .tips {
+        display: block;
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  /*** dashboard provider ***/
+  .page-dashboard-admin {
+
+    .stats-banner {
+      padding: 30px 0;
+
+      .stats-list {
+        width: 100%;
+
+        li {
+          width: 33%;
+
+          &.number-of-state {
+            display: block;
+            .stat-value {
+              color: greenyellow;
+            }
+          }
+
+          &:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            height: 73px;
+            border-right: 1px solid rgba(255, 255, 255, 0.21);
+          }
+
+          .stat-value {
+            font-size: 72px;
+            margin-bottom: 14px;
+
+            .long-txt {
+              display: inline;
+            }
+
+            .short-txt {
+              display: none;
+            }
+          }
+
+          .stat-title {
+            font-size: 15px;
+            line-height: 1;
+          }
+
+          &.stat-active-users {
+            display: block;
+          }
+
+          &.stat-reading-time-content {
+            width: 36%;
+          }
+        }
+      }
+    }
+  }
+
+  @include ipad-pro{
+    .page-dashboard{
+      .tabs-content {
+        .content-feed-wrapper {
+          .content-feed-list {
+            .content-feed-box {
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

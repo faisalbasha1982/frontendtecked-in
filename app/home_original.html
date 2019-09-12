@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/slick-carousel/slick/slick.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/slick-carousel/slick/slick.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/pages/home.js" defer></script>
+
+
+</head>
+<body id="page-home">
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+  <!-- home page header -->
+  <header class="home-page-header">
+    <div class="bg-image"></div>
+    <div class="buttons-row-wrapper">
+      <div class="container">
+        <div class="buttons-row">
+          <div class="btn-login-signup">
+            <a href="./login.html" class="btn btn-login"><span>Login</span></a>
+            <a href="./signup.html" class="btn btn-signup"><span>Sign Up</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-content-wrapper">
+      <div class="container">
+        <div class="header-content">
+          <a href="./home.html" class="logo">
+            <img src="./img/logo.png" alt="logo"/>
+          </a>
+          <p class="about-message">
+            Teckedin.com is the best place for all the aspiring Technology users/providers. We provide a platform that
+            IT users can
+            search and save web content and where technology providers use our site to upload content & market to IT End
+            Users
+          </p>
+        </div>
+      </div>
+      <div class="alert-box">
+        <div class="alert-message">
+          <p>Best offer Alert! We are offering one month <strong>FREE</strong> to solution providers.</p>
+          <p>So grab this wonderful chance and <a href="./signup.html">SignUp</a> now!</p>
+        </div>
+        <a href="./signup.html" class="btn btn-primary btn-signup">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main class="main-content">
+    <!-- how it works section -->
+    <section data-section="how-it-works">
+      <div class="container">
+        <h3 class="section-heading">How it works</h3>
+        <div class="section-content">
+          <div class="headings-row" data-tabs-navigation="how-it-works">
+            <h3 class="is-active" data-tab-target="#for-tech-users"><span class="short-txt">For Tech. Users</span><span
+                class="long-txt">For Technology Users</span></h3>
+            <h3 data-tab-target="#for-tech-providers"><span class="short-txt">For Techn. Providers</span><span
+                class="long-txt">For Technology Providers</span></h3>
+          </div>
+          <div class="how-it-works-lists" data-tabs-content="how-it-works">
+            <ul class="is-active" id="for-tech-users">
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-sign-in"></span>
+                  <span class="index">1</span>
+                </div>
+                <p class="step-txt">Signin and Customize your Dashboard</p>
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-search-tech"></span>
+                  <span class="index">2</span>
+                </div>
+                <p class="step-txt">Search for your Favorite Technologies</p>
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-save-content"></span>
+                  <span class="index">3</span>
+                </div>
+                <p class="step-txt">Save the Content on your Personal Vault</p>
+              </li>
+            </ul>
+            <ul id="for-tech-providers">
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-sign-up"></span>
+                  <span class="index">1</span>
+                </div>
+                <p class="step-txt">Signup on Teckedin for <strong>Free</strong> for 1 month</p>
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-upload-content"></span>
+                  <span class="index">2</span>
+                </div>
+                <p class="step-txt">Upload content for the Technology Users</p>
+              </li>
+              <li>
+                <div class="icon-wrapper">
+                  <span class="icons icon-advertise"></span>
+                  <span class="index">3</span>
+                </div>
+                <p class="step-txt">Advertise about all your products for a good price</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- categories section -->
+    <section data-section="categories">
+      <div class="bg-image"></div>
+      <div class="container">
+        <h3 class="section-heading color-white">Our Categories</h3>
+        <div class="section-content">
+          <ul class="categories-list">
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- popular content -->
+    <section data-section="popular-content">
+      <div class="container">
+        <h3 class="section-heading">Popular Content<span class="large-txt"> from Our Solution Providers</span></h3>
+        <div class="section-content">
+          <ul class="content-feed-list">
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- signup section -->
+    <div class="signup-section">
+      <div class="bg-image"></div>
+      <div class="container">
+        <p class="txt">Get better price point than you are currently paying for ads and sponsorships. Hurry Up </p>
+        <a href="./signup.html" class="btn btn-primary btn-signup">Sign Up</a>
+      </div>
+    </div>
+
+    <!-- membership plans section -->
+    <section data-section="membership-plans">
+      <div class="container">
+        <h3 class="section-heading">Membership Charges for Technology Users</h3>
+        <div class="section-content">
+          <div class="membership-plans-wrapper">
+            <div class="membership-plan-box" data-plan="free">
+              <h3 class="membership-name">For 1st Month</h3>
+              <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+              <p class="membership-charge">FREE</p>
+              <p class="membership-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliUt enim ad minim veni lorem ispum
+              </p>
+              <a href="javascript:;" class="btn-learn-more">Learn more</a>
+              <a href="./login.html" class="btn btn-purchase">Login To Try</a>
+            </div>
+            <div class="membership-plan-box" data-plan="standard">
+              <h3 class="membership-name">Standard</h3>
+              <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+              <p class="membership-charge">$30 <sub>/mon</sub></p>
+              <p class="membership-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliUt enim ad minim veni lorem ispum
+              </p>
+              <a href="javascript:;" class="btn-learn-more">Learn more</a>
+              <a href="./login.html" class="btn btn-purchase">Login to Purchase</a>
+            </div>
+            <div class="membership-plan-box" data-plan="professional">
+              <h3 class="membership-name">Professional</h3>
+              <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+              <p class="membership-charge">$50 <sub>/mon</sub></p>
+              <p class="membership-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliUt enim ad minim veni lorem ispum
+              </p>
+              <a href="javascript:;" class="btn-learn-more">Learn more</a>
+              <a href="./login.html" class="btn btn-purchase">Login to Purchase</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimony section -->
+    <section data-section="testimonials">
+      <div class="container">
+        <h3 class="section-heading">What Our Service Providers and Users Say</h3>
+        <div class="section-content">
+          <ul class="testimonial-list">
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Shane Watson</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  <img src="./img/user-image-1.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Priyanka Hedge</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                  <img src="./img/user-image-2.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Shane Watson</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  <img src="./img/user-image-1.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Priyanka Hedge</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                  <img src="./img/user-image-2.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Shane Watson</p>
+                <p class="user-role">Technology User</p>
+                <div class="user-image">
+                  <img src="./img/user-image-1.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="testimonial-box">
+                <div class="quote-wrapper">
+                  <p class="quote">I was able to get the best information on Technology that like in a very ipsum dolor
+                    sit amet, consectetur adipi
+                    lore scing elit, sed do eiusmod tempor incididunt ut la<span class="long-txt">bore et dolore magna aliqua. Ut enim andsy.</span>
+                  </p>
+                </div>
+                <p class="user-name">Priyanka Hedge</p>
+                <p class="user-role">Technology Provider</p>
+                <div class="user-image">
+                  <img src="./img/user-image-2.jpg" alt="user"/>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+<!-- page-wrapper ends -->
+
+<!-- modal - guest login modal -->
+<div id="modal-home-login" data-modal="is-closed">
+  <div class="modal">
+    <aside class="modal-aside">
+
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="logo">
+          <img src="./img/logo-header.png" alt="logo"/>
+        </div>
+        <p class="message-txt">
+          Dear Guest, login to your account to enjoy the best Technical content for you on your favorite Teckedin.com.
+        </p>
+        <div class="buttons-row">
+          <a href="./login.html" class="btn btn-primary btn-login">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

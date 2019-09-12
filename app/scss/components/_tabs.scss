@@ -1,0 +1,99 @@
+
+/*** general tab navigation ***/
+[data-tabs] {
+  
+  [data-tabs-content] {
+    
+    > * {
+      display: none;
+      
+      &.is-active {
+        display: block;
+      }
+    }
+  }
+}
+
+
+/*** main tab type styles ***/
+.tabs {
+  
+  .tabs-nav {
+    height: 41px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    
+    .tabs-title {
+      padding: 0 16px;
+      
+      a {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        
+        &.is-active {
+          color: #fff;
+          font-weight: 500;
+          
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.tabs-content {
+  
+  .tabs-panel {
+    
+    .tab-heading {
+      display: none;
+    }
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  .tabs {
+    
+    .tabs-nav {
+      height: 47px;
+      
+      .tabs-title {
+        padding: 0 60px 0 0;
+        
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+    
+    .tabs-content {
+      
+      .tabs-panel {
+        
+        .tab-heading {
+          display: inline-block;
+          margin: 26px 0 32px;
+          font-size: 22px;
+          color: $theme-primary-color;
+          position: relative;
+          
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -11px;
+            width: 55%;
+            max-width: 90px;
+            border-bottom: 3px solid #4bb7c4;
+            border-radius: 1.5px;
+          }
+        }
+      }
+    }
+  }
+}

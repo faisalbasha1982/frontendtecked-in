@@ -1,0 +1,98 @@
+
+.nav-side-panel {
+  display: none;
+}
+
+/*** only for small widths ***/
+@include respond-to(only-small) {
+
+  [data-nav-side-panel="true"] {
+    overflow: hidden;
+
+    .page-wrapper {
+      transform: translate(300px, 0);
+      background-color: #fff;
+      box-shadow: -2px 0px 30px 0 rgba(1, 1, 1, 0.1);
+    }
+
+    .nav-side-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+      width: 300px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+
+      .logo-wrapper {
+        background-color: #fff;
+        height: 84px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #d1d1d1;
+
+        .logo {
+          display: block;
+
+          img {
+            width: 219px;
+            height: 40px;
+          }
+        }
+      }
+
+      .logged-in-user-info {
+        padding: 24px 20px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .greeting {
+          font-style: italic;
+          color: #7c7c7c;
+          margin-bottom: 7px;
+          font-size: 12px;
+        }
+
+        .user-name {
+          font-size: 24px;
+          color: $link-text-color;
+          font-weight: 500;
+          margin-bottom: 6px;
+        }
+
+        .user-title {
+          color: #8a8a8a;
+        }
+      }
+
+      .primary-nav {
+        flex-grow: 1;
+        background-color: $theme-primary-color;
+        padding: 35px 0 25px;
+
+        ul li {
+          margin-bottom: 17px;
+
+          a {
+            display: block;
+            height: 56px;
+            line-height: 56px;
+            padding: 0 20px 0 54px;
+            color: #fff;
+            font-size: 20px;
+
+            &.active {
+              font-weight: 500;
+              background-color: #24838e;
+              border-left: 4px solid #0ec7dc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

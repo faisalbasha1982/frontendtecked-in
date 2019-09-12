@@ -1,0 +1,65 @@
+
+.ps-container {
+    position: relative;
+    
+    &.ps-active-x {
+        
+        > .ps-scrollbar-x-rail {
+            height: 2px;
+            opacity: 1;
+            
+            > .ps-scrollbar-x {
+                background-color: $color-custom-scroll;
+                height: 2px;
+                border-radius: 0;
+                bottom: 0;
+            }
+        }
+    }
+    
+    &.ps-active-y {
+        
+        > .ps-scrollbar-y-rail {
+            width: 2px;
+            opacity: 1;
+            right: -2px;
+            
+            > .ps-scrollbar-y {
+                background-color: $color-custom-scroll;
+                width: 2px;
+                border-radius: 0;
+                right: 0;
+            }
+        }
+    }
+}
+
+
+@include respond-to(medium) {
+    
+    .ps-container {
+        
+        &.ps-active-x {
+            
+            > .ps-scrollbar-x-rail {
+                height: 4px;
+                
+                > .ps-scrollbar-x {
+                    height: 4px;
+                }
+            }
+        }
+        
+        &.ps-active-y {
+            
+            > .ps-scrollbar-y-rail {
+                width: 4px;
+                right: -4px;
+                
+                > .ps-scrollbar-y {
+                    width: 4px;
+                }
+            }
+        }
+    }
+}

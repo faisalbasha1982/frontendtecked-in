@@ -1,0 +1,219 @@
+
+#page-login {
+
+  .main-content {
+    height: 275px;
+    background-color: #fff;
+    position: relative;
+
+    .login-form {
+      width: 335px;
+      z-index: 1;
+      margin: 0 auto;
+      padding: 30px 40px 35px;
+      position: relative;
+      top: -140px;
+      border-radius: 3px;
+      background: url(../img/bg-login-form.jpg) no-repeat;
+      background-size: cover;
+      box-shadow: $box-shadow;
+
+      .form-heading {
+        font-size: 15px;
+        color: $theme-primary-color;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 46px;
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -20px;
+          left: 12px;
+          right: 12px;
+          border-bottom: 1px solid #e1e1e1;
+        }
+      }
+
+      .radio-login-user-type {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 23px;
+
+        .radio-label {
+          font-size: 15px;
+
+          &:not(.short) {
+            display: none;
+          }
+        }
+      }
+
+      .user-input {
+        position: relative;
+
+        .error-message {
+          color: $error-color;
+          position: absolute;
+          bottom: calc(100% + 2px);
+          opacity: 0;
+          transition: opacity 500ms;
+        }
+
+        input {
+          width: 100%;
+          height: 38px;
+          font-size: 14px;
+          text-align: center;
+          transition: border-color 500ms;
+        }
+
+        .input-username {
+          margin-bottom: 10px;
+        }
+
+        .input-password-wrapper {
+          position: relative;
+          margin-bottom: 12px;
+
+          .input-password {
+            padding: 0 25px;
+          }
+
+          .icon-password {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+          }
+        }
+      }
+
+      .forgot-passowrd-link {
+        color: $link-text-color;
+        display: block;
+        margin-bottom: 12px;
+        text-align: right;
+      }
+
+      .btn-login {
+        width: 100%;
+        height: 38px;
+        font-size: 15px;
+      }
+
+      &.login-error {
+
+        .error-message {
+          opacity: 1;
+        }
+
+        .user-input {
+
+          input {
+            border-color: $error-color;
+          }
+        }
+      }
+    }
+  }
+
+  .social-login {
+    margin-top: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button {
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+
+    }
+    .facebook{
+      margin-right: 25px;
+    }
+    .google{
+      margin-left: 25px;
+    }
+  }
+}
+
+@include respond-to(medium) {
+
+  #page-login {
+
+    .main-content {
+      height: 375px;
+
+      .login-form {
+        width: 471px;
+        top: -207px;
+        border-radius: 5px;
+        padding: 43px 78px;
+
+        .form-heading {
+          font-size: 19px;
+          margin-bottom: 23px;
+
+          &:after {
+            bottom: -65px;
+            left: 0;
+            right: 0;
+          }
+        }
+
+        .radio-login-user-type {
+          margin-bottom: 60px;
+
+          .radio-label {
+            font-size: 14px;
+            display: none;
+
+            &:not(.short) {
+              display: block;
+            }
+          }
+        }
+
+        .user-input {
+
+          input {
+            height: 48px;
+            font-size: 16px;
+          }
+
+          .input-username {
+            margin-bottom: 13px;
+          }
+
+          .input-password-wrapper {
+            margin-bottom: 15px;
+
+            .input-password {
+              padding: 0 35px;
+            }
+
+            .icon-password {
+              right: 16px;
+              top: 19px;
+            }
+          }
+        }
+
+        .forgot-passowrd-link {
+          margin-bottom: 15px;
+        }
+
+        .btn-login {
+          height: 48px;
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}

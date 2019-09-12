@@ -1,0 +1,24 @@
+
+#ui-datepicker-div {
+  color: $primary-text-color;
+  
+  .ui-state-default {
+    background-color: transparent;
+  }
+  
+  .ui-state-highlight {
+    border: 1px solid #c5c5c5;
+    background: $bg-gradient;
+    color: #fff;
+  }
+  
+  .ui-state-active {
+    border: 1px solid $theme-primary-color;
+    color: $theme-primary-color;
+  }
+  
+  .ui-datepicker-header {
+    background: $bg-gradient;
+    color: #fff;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>Ad-free technology platform. Find technology vendors and learn about new technology innovations.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+<!-- stylesheets -->
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+<link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+<!-- scripts -->
+<script src="bower_components/nprogress/nprogress.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+<script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+<script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+<script src="js/script.js" type="text/javascript" defer></script>
+<script src="js/api.js" defer></script>
+<script src="js/pages/login.js" defer></script>
+
+<body id="page-login">
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main header -->
+  <div class="login-signup-banner-wrapper">
+    <div class="container">
+      <div class="login-signup-banner">
+        <header class="buttons-row">
+          <a href="./home.html" class="btn-home align-item-center"><span class="icons icon-close-grey"></span></a>
+          <div class="btn-login-signup">
+            <a href="javascript:;" class="btn btn-login"><span>Login</span></a>
+            <a href="./signup.html" class="btn btn-signup"><span>Sign Up</span></a>
+          </div>
+        </header>
+        <a href="./home.html" class="logo">
+          <img src="./img/logo.png" alt="logo"/>
+        </a>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main -->
+  <main class="main-content">
+    <form class="login-form">
+      <div class="user-input">
+        <span class="error-message">Incorrect username or password!</span>
+        <input type="text" class="input-username" placeholder="Username" name="username"/>
+        <div class="input-password-wrapper">
+          <input type="password" class="input-password" placeholder="Password" name="password"/>
+          <a href="javascript:;" class="icons icon-password"></a>
+        </div>
+      </div>
+      <a href="forgot_password.html" class="forgot-passowrd-link">Forgot password?</a>
+      <a href="javascript:;" class="btn btn-primary btn-login"><span>Login</span></a>
+
+      <div class="social-login">
+        <img src="img/icons/facebook.png" alt="login with facebook"
+             class="button facebook">
+        <img src="img/icons/google-plus.png" alt="login with google"
+             class="button google">
+      </div>
+    </form>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

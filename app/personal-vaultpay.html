@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+
+
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" defer></script>
+
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-personal.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-personal-vault" data-role="user" data-nav-side-panel="false">
+
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+
+  <!-- main -->
+  <main class="main-content">
+    <!-- stats banner -->
+    <div class="stats-banner-wrapper">
+      <div class="container">
+        <div class="stats-banner">
+          <div class="user-details">
+            <p class="user-name">N/A</p>
+            <p class="email">N/A</p>
+          </div>
+          <div class="stat-favorite-categories">
+            <p class="stat-value categories-number">n/a</p>
+            <p class="stat-title">Favorite Categories</p>
+          </div>
+          <div class="stat-saved-contents">
+            <p class="stat-value contents-number">n/a</p>
+            <p class="stat-title">Saved Contents</p>
+          </div>
+          <a href="javascript:;" class="btn btn-cover-photo">
+            <span class="icons icon-camera"></span>
+            <span>Cover Photo</span>
+          </a>
+          <input class="upload-user-img" type="file">
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" data-tabs="personal-vault">
+      <!-- tabs navigation -->
+      <div class="gradient-row">
+        <div class="container">
+          <ul class="tabs-nav" data-tabs-navigation="personal-vault">
+            <li class="tabs-title"><a href="javascript:;" class="is-active" data-tab-target="#tab-saved-content">My
+              Saved Content</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-fav-tech-providers">Favorite Tech.
+              Providers</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-activity">My Activity</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-settings">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="search-filter-sort-row-wrapper">
+        <div class="container">
+          <div class="search-filter-sort-row">
+            <div class="search-box">
+              <input type="text" class="input-search" placeholder="Search Provider posts"/>
+              <span class="icons icon-search"></span>
+            </div>
+            <div class="filter-wrapper" data-popup="filter-panel">
+              <a href="javascript:;" class="btn btn-primary btn-filter" data-popup-trigger><span
+                  class="icons icon-filter"></span><span>Filter</span></a>
+              <div class="popup-box filter-panel" data-popup-content>
+                <div class="popup-head">
+                  <h3>Filter Options</h3>
+                  <a href="javascript:;" class="icons icon-close-grey-2" data-close-popup></a>
+                </div>
+                <div class="popup-body">
+                  <div data-sub-filter="category" id="save-statues">
+                    <h3>Status :</h3>
+                    <ul class="filter-categories-list">
+                      <li class="master-check">
+                        <label class="checkbox">
+                          <input type="checkbox" data-id="expired" class="category-checkbox" name="filter-checkbox"/>
+                          <span class="icon-checkbox"></span>
+                          <span class="checkbox-label">Expired</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="checkbox">
+                          <input type="checkbox" data-id="active" class="category-checkbox" name="filter-checkbox"/>
+                          <span class="icon-checkbox"></span>
+                          <span class="checkbox-label">Active</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div data-sub-filter="published-date">
+                    <h3 id="date-range-name">Created Date :</h3>
+                    <div class="date-range-wrapper">
+                      <div class="from-date">
+                        <span class="txt">From</span>
+                        <input type="text" id="startDate" name="startDate" placeholder="yyyy-mm-dd"/>
+                      </div>
+                      <div class="to-date">
+                        <span class="txt">To</span>
+                        <input type="text" id="endDate" name="endDate" placeholder="yyyy-mm-dd"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="buttons-row">
+                  <a href="javascript:;" class="btn btn-reset"><span>Reset</span></a>
+                  <a href="javascript:;" class="btn btn-primary btn-filter-action"
+                     data-close-popup><span>Filter</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-sort-by-wrapper">
+              <span class="txt">Sort By</span>
+              <div class="dropdown dropdown-sort-by">
+                <a href="javascript:;" class="btn btn-dropdown">
+                  <span class="selected-option">Date created</span><span class="icons icon-dropdown-caret-1"></span>
+                </a>
+                <div class="dropdown-menu">
+                  <ul>
+                    <li class="selected-option"><a href="javascript:;">Date created</a></li>
+                    <li><a href="javascript:;">Reading Time</a></li>
+                    <li><a href="javascript:;">Tech. Provider</a></li>
+                    <li><a href="javascript:;">Article Length</a></li>
+                    <li><a href="javascript:;">Alphabetical</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tabs content -->
+      <div class="tabs-content" data-tabs-content="personal-vault">
+        <div class="tabs-panel is-active" id="tab-saved-content">
+          <div class="saved-content-wrapper" data-load-more>
+            <div class="container clearfix">
+              <h3 class="tab-heading">My Saved Content</h3>
+              <ul class="saved-content-list" data-load-more-list data-sortable data-filterable-sortable>
+              </ul>
+              <br/>
+              <br/>
+              <a href="javascript:;" class="btn btn-load-more save-post-btn-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab fav tech providers -->
+        <div class="tabs-panel" id="tab-fav-tech-providers">
+          <div class="fav-tech-providers-wrapper" data-load-more>
+            <div class="container">
+              <h3 class="tab-heading">Favorite Tech. Providers</h3>
+              <ul class="tech-providers-list" data-load-more-list data-filterable-sortable>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab your activity -->
+        <div class="tabs-panel" id="tab-activity">
+          <div class="your-activities-wrapper">
+            <div class="container">
+              <h3 class="tab-heading">Your Activity</h3>
+              <ul class="your-activity-list" data-filterable-sortable>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab settings -->
+        <div class="tabs-panel" id="tab-settings">
+          <div class="settings-wrapper">
+            <div class="container">
+              <h3 class="tab-heading">Settings</h3>
+              <ul class="settings-list">
+                <li data-setting="change-password">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Change password</h3>
+                  <div class="user-input">
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="Current Password" name="current-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="New Password" name="new-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="Confirm New Password" name="confirm-new-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                  </div>
+                  <button class="btn-change-password">Change password</button>
+                </li>
+                <li data-setting="update-fav-categories">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Update Favorite Categories of Technologies to appear on Dashboard</h3>
+                  <ul class="tech-interests-list">
+                  </ul>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me when a New content is posted by any of my favorite Tech.
+                    Providers</h3>
+                  <label class="toggle-switch">
+                    <input data-type="notifyMeByPostCreated" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me when a New content is updated by the Provider</h3>
+                  <label class="toggle-switch">
+                    <input  data-type="notifyMeByPostUpdated" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me of upcoming virtual tradeshows and webinars</h3>
+                  <label class="toggle-switch">
+                    <input data-type="notifyMeUpcomingEvent" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+
+                <li data-setting="membership-plan">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Purchase your Membership. Your cirrent plan is <span
+                      class="current-membership">FREE!</span></h3>
+                  <div class="membership-plans-wrapper">
+                    <div class="membership-plan-box" data-plan="free">
+                      <h3 class="membership-name">For 1st Month</h3>
+                      <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+                      <p class="membership-charge">FREE</p>
+                      <p class="membership-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
+                        magna aliUt enim ad minim veni lorem ispum
+                      </p>
+                      <a href="javascript:;" class="btn-learn-more">Learn more</a>
+                      <a href="javascript:;" class="btn btn-purchase">Free</a>
+                    </div>
+                    <div class="membership-plan-box" data-plan="standard">
+                      <h3 class="membership-name">Standard</h3>
+                      <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+                      <p class="membership-charge">$30 <sub>/mon</sub></p>
+                      <p class="membership-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
+                        magna aliUt enim ad minim veni lorem ispum
+                      </p>
+                      <a href="javascript:;" class="btn-learn-more">Learn more</a>
+                      <a href="javascript:;" class="btn btn-purchase"
+                         data-modal-trigger="#modal-payment-standard-membership">Purchase</a>
+                    </div>
+                    <div class="membership-plan-box" data-plan="professional">
+                      <h3 class="membership-name">Professional</h3>
+                      <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+                      <p class="membership-charge">$50 <sub>/mon</sub></p>
+                      <p class="membership-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore
+                        magna aliUt enim ad minim veni lorem ispum
+                      </p>
+                      <a href="javascript:;" class="btn-learn-more">Learn more</a>
+                      <a href="javascript:;" class="btn btn-purchase"
+                         data-modal-trigger="#modal-payment-pro-membership">Purchase</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+
+<!-- modals -->
+<!-- modal - standard-membership -->
+<div id="modal-payment-standard-membership" data-modal="is-closed" class="modal-payment">
+  <div class="modal">
+    <aside class="modal-aside">
+      <div class="membership-plan-box" data-plan="standard">
+        <h3 class="membership-name">Standard</h3>
+        <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+        <p class="membership-charge">$30 <sub>/mon</sub></p>
+        <p class="membership-description">
+          Lorem ipsum dolor sit amet, coan sectetur adipiscing elit, sed dloroi eiusmod tempor incidi dunt lore ut
+          labore et dolore
+          magna lorem ialiq at enim and minim. Lorem ipsuma dolor sit amet, conse ctetur adiaopiscing elit, sed dloro
+          eiusl orlimod
+          tempor incidi dunt lorem.
+        </p>
+        <a href="javascript:;" class="btn-learn-more">Learn more</a>
+      </div>
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Payment for Membership</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="payment-options-wrapper" data-tabs="payment-methods">
+          <div class="payment-options-list" data-tabs-navigation="payment-methods">
+            <label class="radio-option is-active" data-tab-target="#tab-credit-card">
+              <input type="radio" name="payment-option" value="credit-card" checked/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Credit Card</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-net-banking">
+              <input type="radio" name="payment-option" value="net-banking"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Net Banking</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-paypal">
+              <input type="radio" name="payment-option" value="paypal"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Paypal</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-bitcoin">
+              <input type="radio" name="payment-option" value="bitcoin"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Bitcoin</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-wallets">
+              <input type="radio" name="payment-option" value="wallets"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Wallets</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-gift-cards">
+              <input type="radio" name="payment-option" value="gift-cards"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Gift Card</span>
+            </label>
+          </div>
+          <div class="payment-option-details-wrapper" data-tabs-content="payment-methods">
+            <div id="tab-credit-card" class="payment-details is-active">
+              <h4>Credit Card Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+                <div class="input-wrapper input-expiry-month">
+                  <p class="label">Expiry Month</p>
+                  <div class="dropdown dropdown-expiry-month">
+                    <a href="javascript:;" class="btn btn-dropdown">
+                      <span class="selected-option"></span><span class="icons icon-dropdown-caret-2"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <ul>
+                        <li><a href="javascript:;">Jan</a></li>
+                        <li><a href="javascript:;">Feb</a></li>
+                        <li><a href="javascript:;">Mar</a></li>
+                        <li><a href="javascript:;">Apr</a></li>
+                        <li><a href="javascript:;">May</a></li>
+                        <li><a href="javascript:;">Jun</a></li>
+                        <li><a href="javascript:;">Jul</a></li>
+                        <li><a href="javascript:;">Aug</a></li>
+                        <li><a href="javascript:;">Sep</a></li>
+                        <li><a href="javascript:;">Oct</a></li>
+                        <li><a href="javascript:;">Nov</a></li>
+                        <li><a href="javascript:;">Dec</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrapper input-expiry-year">
+                  <p class="label">Expiry Year</p>
+                  <div class="dropdown dropdown-expiry-year">
+                    <a href="javascript:;" class="btn btn-dropdown">
+                      <span class="selected-option"></span><span class="icons icon-dropdown-caret-2"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <ul>
+                        <li><a href="javascript:;">2017</a></li>
+                        <li><a href="javascript:;">2018</a></li>
+                        <li><a href="javascript:;">2019</a></li>
+                        <li><a href="javascript:;">2020</a></li>
+                        <li><a href="javascript:;">2021</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrapper input-security-code">
+                  <p class="label">CVV Number</p>
+                  <input type="password" name="cvv-number"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-net-banking" class="payment-details">
+              <h4>Net Banking Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-paypal" class="payment-details">
+              <h4>PayPal Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-bitcoin" class="payment-details">
+              <h4>Bitcoin Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-wallets" class="payment-details">
+              <h4>Wallet Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-gift-cards" class="payment-details">
+              <h4>Gift Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-pay-now" data-close-modal>Pay Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal - professional membership -->
+<div id="modal-payment-pro-membership" data-modal="is-closed" class="modal-payment">
+  <div class="modal">
+    <aside class="modal-aside">
+      <div class="membership-plan-box" data-plan="professional">
+        <h3 class="membership-name">Professional</h3>
+        <p class="membership-tagline">Suitable for lorem ipsum dolor Users and Departments</p>
+        <p class="membership-charge">$50 <sub>/mon</sub></p>
+        <p class="membership-description">
+          Lorem ipsum dolor sit amet, coan sectetur adipiscing elit, sed dloroi eiusmod tempor incidi dunt lore ut
+          labore et dolore
+          magna lorem ialiq at enim and minim. Lorem ipsuma dolor sit amet, conse ctetur adiaopiscing elit, sed dloro
+          eiusl orlimod
+          tempor incidi dunt lorem.
+        </p>
+        <a href="javascript:;" class="btn-learn-more">Learn more</a>
+      </div>
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Payment for Membership</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="payment-options-wrapper" data-tabs="payment-methods-pro">
+          <div class="payment-options-list" data-tabs-navigation="payment-methods-pro">
+            <label class="radio-option is-active" data-tab-target="#tab-pro-credit-card">
+              <input type="radio" name="payment-option-pro" value="credit-card" checked/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Credit Card</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-pro-net-banking">
+              <input type="radio" name="payment-option-pro" value="net-banking"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Net Banking</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-pro-paypal">
+              <input type="radio" name="payment-option-pro" value="paypal"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Paypal</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-pro-bitcoin">
+              <input type="radio" name="payment-option-pro" value="bitcoin"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Bitcoin</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-pro-wallets">
+              <input type="radio" name="payment-option-pro" value="wallets"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Wallets</span>
+            </label>
+            <label class="radio-option" data-tab-target="#tab-pro-gift-cards">
+              <input type="radio" name="payment-option-pro" value="gift-cards"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Gift Card</span>
+            </label>
+          </div>
+          <div class="payment-option-details-wrapper" data-tabs-content="payment-methods-pro">
+            <div id="tab-pro-credit-card" class="payment-details is-active">
+              <h4>Credit Card Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+                <div class="input-wrapper input-expiry-month">
+                  <p class="label">Expiry Month</p>
+                  <div class="dropdown dropdown-expiry-month">
+                    <a href="javascript:;" class="btn btn-dropdown">
+                      <span class="selected-option"></span><span class="icons icon-dropdown-caret-2"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <ul>
+                        <li><a href="javascript:;">Jan</a></li>
+                        <li><a href="javascript:;">Feb</a></li>
+                        <li><a href="javascript:;">Mar</a></li>
+                        <li><a href="javascript:;">Apr</a></li>
+                        <li><a href="javascript:;">May</a></li>
+                        <li><a href="javascript:;">Jun</a></li>
+                        <li><a href="javascript:;">Jul</a></li>
+                        <li><a href="javascript:;">Aug</a></li>
+                        <li><a href="javascript:;">Sep</a></li>
+                        <li><a href="javascript:;">Oct</a></li>
+                        <li><a href="javascript:;">Nov</a></li>
+                        <li><a href="javascript:;">Dec</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrapper input-expiry-year">
+                  <p class="label">Expiry Year</p>
+                  <div class="dropdown dropdown-expiry-year">
+                    <a href="javascript:;" class="btn btn-dropdown">
+                      <span class="selected-option"></span><span class="icons icon-dropdown-caret-2"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <ul>
+                        <li><a href="javascript:;">2017</a></li>
+                        <li><a href="javascript:;">2018</a></li>
+                        <li><a href="javascript:;">2019</a></li>
+                        <li><a href="javascript:;">2020</a></li>
+                        <li><a href="javascript:;">2021</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-wrapper input-security-code">
+                  <p class="label">CVV Number</p>
+                  <input type="password" name="cvv-number"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-pro-net-banking" class="payment-details">
+              <h4>Net Banking Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-pro-paypal" class="payment-details">
+              <h4>PayPal Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-pro-bitcoin" class="payment-details">
+              <h4>Bitcoin Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-pro-wallets" class="payment-details">
+              <h4>Wallet Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+            <div id="tab-pro-gift-cards" class="payment-details">
+              <h4>Gift Details</h4>
+              <div class="user-input">
+                <div class="input-wrapper input-card-number">
+                  <p class="label">Card Number</p>
+                  <input type="text" name="card-number"/>
+                </div>
+                <div class="input-wrapper input-card-name">
+                  <p class="label">Name on Card</p>
+                  <input type="text" name="card-name"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-pay-now" data-close-modal>Pay Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

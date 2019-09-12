@@ -1,0 +1,81 @@
+body p {
+    margin: 10px 0
+}
+
+body p .align-left {
+    float: left
+}
+
+body p .align-right {
+    float: right
+}
+
+body p.align-center {
+    text-align: center
+}
+
+body h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 20px
+}
+
+body h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0 15px
+}
+
+body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 0 10px
+}
+
+body b {
+    font-weight: 700
+}
+
+body i {
+    font-style: italic
+}
+
+body ol, body ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin: 10px 0
+}
+
+body ol li + li, body ul li + li {
+    margin-top: 10px
+}
+
+body a {
+    color: #2749d9
+}
+
+body pre {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-family: roboto, PingFang SC, Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, "\5FAE\8F6F\96C5\9ED1", STHeiti, "\534E\6587\7EC6\9ED1", sans-serif
+}
+
+body code {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #f4f5fa;
+    border: solid #e5ecfb 1px;
+    font-family: roboto, PingFang SC, Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, "\5FAE\8F6F\96C5\9ED1", STHeiti, "\534E\6587\7EC6\9ED1", sans-serif
+}
+
+body img {
+    max-width: 100%;
+    display: inline-block;
+    margin: 10px 0
+}
+
+body em {
+    font-style: italic
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Teckedin - Content driven technology platform for users and providers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+  <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="//vjs.zencdn.net/5.19/video.min.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/content-details.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-content-details-user" data-role="user" class="page-content-details" data-nav-side-panel="false">
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main -->
+  <main class="main-content">
+    <!-- breadcrumbs -->
+    <div class="gradient-row">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="./all-content.html">All Content</a>
+          <span class="current-page">Content Details</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-wrapper"></div>
+  </main>
+
+</div>
+<!-- page-wrapper ends -->
+
+<div id="modal-save-to-vault" class="modal-save-to-vault" data-modal="is-closed">
+  <div class="modal">
+    <aside class="modal-aside">
+      <div class="content-feed-box">
+        <div class="bg-image">
+          <img class="popup-img" src="./img/thumb-feed-default.jpg" alt="thumbnail"/>
+        </div>
+        <div class="feed-content">
+          <a href="javascript:;" class="feed-name">N/A</a>
+          <p class="tech-provider-name">N/A</p>
+          <p class="feed-txt">
+            N/A
+          </p>
+          <div class="date-views-row">
+            <div class="date">
+              <span class="icons icon-calendar"></span>
+              <span class="published-time">N/A</span>
+            </div>
+            <div class="views">
+              <span class="icons icon-views"></span>
+              <span class="viewTimes">N/A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Save to Personal Vault</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="user-input">
+          <div class="input-wrapper input-keywords">
+            <p class="label">Keywords</p>
+            <textarea id="keywords" placeholder="Please input some keywords"></textarea>
+          </div>
+          <div class="input-wrapper input-time-to-keep">
+            <p class="label">How long would you like to keep this content?</p>
+            <div class="dropdown dropdown-time-to-keep">
+              <a href="javascript:;" class="btn btn-dropdown">
+                <span class="selected-option placeholder">Select</span><span
+                  class="icons icon-dropdown-caret-2"></span>
+              </a>
+              <div class="dropdown-menu">
+                <ul>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="oneDay">1 Day</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="oneWeek">1 Week</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="oneMonth">1 Month</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="sixMonths">6 Months</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="oneYear">1 Year</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="fiveYears">5 Years</a></li>
+                  <li><a href="javascript:;" class="time-dropdown-item" data-id="never">Forever</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-wrapper input-keywords">
+            <p class="label">Add to Peer's Vault</p>
+            <input id="share-email" placeholder="Enter a teckedin user email">
+          </div>
+        </div>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-save">
+            <span class="icons icon-save-to-vault"></span>
+            <span>Save</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-request-info" class="modal-save-to-vault" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Request Information from Provider</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="user-input">
+
+          <div class="input-wrapper input-keywords">
+            <p class="label">What information can we help you with?</p>
+            <textarea placeholder="Please input some content *" name="content"></textarea>
+          </div>
+
+          <div class="input-wrapper input-time-to-keep">
+            <p class="label">Enter your phone number:</p>
+            <input name="phone" placeholder="Phone Number"/>
+          </div>
+
+          <div class="input-wrapper input-keywords">
+            <p class="label">Other contact information:</p>
+            <textarea placeholder="Other contact information" name="other"></textarea>
+          </div>
+
+        </div>
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-sure-request">
+            <span>Request</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-email-post" class="modal-save-to-vault" data-modal="is-closed">
+  <div class="modal">
+    <aside class="modal-aside">
+      <div class="content-feed-box">
+        <div class="bg-image">
+          <img class="popup-img" src="./img/thumb-feed-default.jpg" alt="thumbnail"/>
+        </div>
+        <div class="feed-content">
+          <a href="javascript:;" class="feed-name">N/A</a>
+          <p class="tech-provider-name">N/A</p>
+          <p class="feed-txt">
+            N/A
+          </p>
+          <div class="date-views-row">
+            <div class="date">
+              <span class="icons icon-calendar"></span>
+              <span class="published-time">N/A</span>
+            </div>
+            <div class="views">
+              <span class="icons icon-views"></span>
+              <span class="viewTimes">N/A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Email content to someone</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="user-input">
+          <label class="checkbox">
+            <input class="fav-category-checkbox" data-id="self" id="email-to-myself" type="checkbox"/>
+            <span class="icon-checkbox"><span class="icons"></span></span>
+            <span class="checkbox-label">Email Yourself</span>
+          </label>
+
+          <br/>
+          <label class="checkbox">
+            <input class="fav-category-checkbox" data-id="self" id="email-to-others" type="checkbox"/>
+            <span class="icon-checkbox"><span class="icons"></span></span>
+            <span class="checkbox-label">Email Others</span>
+          </label>
+
+          <div class="input-wrapper input-keywords">
+            <textarea id="email-addresses"
+                      placeholder="Please enter multiple email addresses in a comma separated format"></textarea>
+          </div>
+        </div>
+
+        <div class="buttons-row">
+          <a href="javascript:;" class="btn btn-primary btn-send-email">
+            <span> Send </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-subscribe" class="modal-save-to-vault modal-subscribe" data-modal="is-closed">
+  <div class="modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Subscribe</h3>
+        <a href="javascript:;" class="btn btn-modal-close" data-close-modal><span class="icons icon-close-white"></span></a>
+      </div>
+
+      <div class="modal-body">
+        <p>Your email address will be shared with provider. Do you want to subscribe to this content?</p>
+        <div class="buttons-row-2">
+          <a href="javascript:;" class="btn btn-primary btn-sure-subscribe">
+            <span>OK</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

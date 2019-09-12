@@ -1,0 +1,32 @@
+
+[data-slider].ui-slider-horizontal {
+  height: 2px;
+  background-color: #d3d3d3;
+  border-radius: 1px;
+  box-shadow: none;
+  border: 0;
+  
+  .ui-slider-handle {
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0px 5px 5px 0 rgba(0, 0, 0, 0.07);
+    background-color: $theme-primary-color;
+    width: 15px;
+    height: 15px;
+    top: -7px;
+    cursor: pointer;
+  }
+  
+  .ui-slider-range {
+    background-color: $theme-primary-color;
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  [data-slider] {
+    
+  }
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+<!-- stylesheets -->
+<link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+<link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+<link href="bower_components/select2/dist/css/select2.min.css" rel='stylesheet'/>
+<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+
+<!-- scripts -->
+<script src="bower_components/nprogress/nprogress.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+<script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+<script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+<script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript" defer></script>
+<script src="js/script.js" type="text/javascript" defer></script>
+<script src="js/api.js" type="text/javascript" defer></script>
+<script src="js/pages/singup.js" type="text/javascript" defer></script>
+
+
+<body id="page-signup">
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main header -->
+  <div class="login-signup-banner-wrapper">
+    <div class="container">
+      <div class="login-signup-banner">
+        <header class="buttons-row">
+          <a href="./home.html" class="btn-home align-item-center"><span class="icons icon-close-grey"></span></a>
+          <div class="btn-login-signup">
+            <a href="./login.html" class="btn btn-login"><span>Login</span></a>
+            <a href="javascript:;" class="btn btn-signup"><span>Sign Up</span></a>
+          </div>
+        </header>
+        <a href="./home.html" class="logo">
+          <img src="./img/logo.png" alt="logo"/>
+        </a>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main -->
+  <main class="main-content">
+    <div class="container">
+      <form class="signup-form">
+        <div class="signup-form-content">
+          <h3 class="form-heading">SIGNUP AS :</h3>
+          <div class="radio-options radio-login-user-type">
+            <label class='radio-option'>
+              <input type="radio" name="user-type" value="tech-user" checked/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Technology User</span>
+              <span class="radio-label short">Tech. User</span>
+            </label>
+            <label class='radio-option'>
+              <input type="radio" name="user-type" value="tech-provider"/>
+              <span class="icon-radio"></span>
+              <span class="radio-label">Technology Provider</span>
+              <span class="radio-label short">Tech. Provider</span>
+            </label>
+          </div>
+          <div class="signup-steps-wrapper" data-user-type="tech-user">
+            <!-- signup progress chart -->
+            <div class="signup-steps-progress-wrapper">
+              <h3>Sign Up Process</h3>
+              <div class="signup-steps-progress">
+                <div data-step="1" class="in-progress">
+                  <span class="step-number"><span>1</span><span class="icons icon-tick"></span></span>
+                  <span class="step-title">Account Info</span>
+                </div>
+                <div data-step="2">
+                  <span class="step-number"><span>2</span><span class="icons icon-tick"></span></span>
+                  <span class="step-title">Personal Info</span>
+                </div>
+                <div data-step="3">
+                  <span class="step-number"><span>3</span><span class="icons icon-tick"></span></span>
+                  <span class="step-title">Technology Interests</span>
+                </div>
+              </div>
+            </div>
+            <!-- signup step content -->
+            <div class="signup-steps-content">
+              <!-- step 1 -->
+              <div data-step="1">
+                <h3 class="step-heading">Step 1 : Account Info (* means required)</h3>
+                <div class="user-input">
+                  <input type="email" class="input-email" placeholder="Email ID *" name="email"/>
+                  <div class="input-password-wrapper">
+                    <input type="password" class="input-password" placeholder="Password *" name="password"/>
+                    <a href="javascript:;" class="icons icon-password"></a>
+                  </div>
+                  <div class="input-password-wrapper">
+                    <input type="password" class="input-password confirm-password" placeholder="Confirm Password *"
+                           name="confirm-password"/>
+                    <a href="javascript:;" class="icons icon-password"></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- step 2 -->
+              <div data-step="2">
+                <h3 class="step-heading">Step 2 : <span id="step2-title">Presonal Info</span></h3>
+                <div class="user-input">
+                  <input type="text" class="input-first-name techUser-step2-input" placeholder="First Name *"
+                         name="first-name"/>
+                  <input type="text" class="input-last-name  techUser-step2-input" placeholder="Last Name *"
+                         name="last-name"/>
+
+                  <input type="text" class="input-first-name  techProvider-step2-input" placeholder="Provider Name *"
+                         name="provider-name"/>
+
+                  <input type="tel" class="input-phone  techUser-step2-input" placeholder="Phone (xxx)-xxx-xxxx *"
+                         name="phone-number"/>
+
+                  <div class="dropdown-countries techUser-step2-input app-select2">
+                    <select class="countries-select2">
+                      <option></option>
+                    </select>
+                  </div>
+
+                  <div class="dropdown-countries techUser-step2-input app-select2">
+                    <select class="states-select2">
+                      <option></option>
+                    </select>
+                  </div>
+
+
+                  <input type="text" class="input-phone techUser-step2-input" placeholder="City *"
+                         name="city"/>
+
+                  <input type="text" class="input-first-name techProvider-step2-input" placeholder="Address *"
+                         name="street"/>
+                  <input type="text" class="input-first-name techProvider-step2-input" placeholder="City *"
+                         name="locality"/>
+
+
+                  <div class="dropdown-countries techProvider-step2-input app-select2">
+                    <select class="states-select2">
+                      <option></option>
+                    </select>
+                  </div>
+
+                  <div class="dropdown-countries techProvider-step2-input app-select2">
+                    <select class="countries-select2">
+                      <option></option>
+                    </select>
+                  </div>
+
+                  <input type="number" class="input-first-name techProvider-step2-input" placeholder="Postal Code *"
+                         name="postalCode"/>
+                  <input type="text" class="input-first-name techProvider-step2-input"
+                         placeholder="Phone (xxx)-xxx-xxxx *"
+                         name="phone"/>
+                  <input type="text" class="input-first-name techProvider-step2-input" placeholder="Email *"
+                         name="provider-email"/>
+                  <input type="text" class="input-first-name techProvider-step2-input" placeholder="Website *"
+                         name="website"/>
+
+                  <div class="file-upload-wrapper techProvider-step2-input">
+                    <div class="file-select">
+                      <input type="file" accept="image/*" class="input-file-select" name="attachment"/>
+                      <input type="text" class="" name="attachment-name" placeholder="Select Logo image" disabled/>
+                    </div>
+                  </div>
+
+                  <textarea class="input-description techProvider-step2-input" placeholder="Description *"
+                            name="provider-description"></textarea>
+
+                </div>
+              </div>
+
+              <!-- step 3 -->
+              <div data-step="3" class="choose-category">
+                <h3 class="step-heading">Step 3 : Technology Interests</h3>
+                <ul class="tech-interests-list">
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="buttons-row">
+            <a href="javascript:;" class="btn btn-primary btn-left"><span>Cancel</span></a>
+            <a href="javascript:;" class="btn btn-primary btn-right"><span>Next</span></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

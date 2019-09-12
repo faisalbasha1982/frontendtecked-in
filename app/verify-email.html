@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+
+  <style>
+    .container {
+      margin-top: 10px;
+    }
+
+    .link {
+      color: #0b93d5;
+    }
+
+    .msg {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+  <span class="msg" id="msg"></span>, page will auto redirect to login page in 3 seconds,
+  or you can <a class="link" href="login.html">click here</a> to login page.
+</div>
+
+<script>
+  function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r !== null) return unescape(r[ 2 ]);
+    return null;
+  }
+  document.getElementById('msg').innerHTML = getQueryString('msg') || 'verify succeed';
+  setTimeout(function () {
+    window.location.href = 'login.html';
+  }, 3000);
+</script>
+</body>
+</html>

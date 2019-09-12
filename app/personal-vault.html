@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Teckedin - Content-driven Technology Platform for Users and Providers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel='stylesheet'/>
+  <!-- scripts -->
+  <script src="bower_components/nprogress/nprogress.js"></script>
+
+
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"
+          defer></script>
+  <script src="bower_components/what-input/dist/what-input.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" defer></script>
+
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/user-personal.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-personal-vault" data-role="user" data-nav-side-panel="false">
+
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+
+
+  <!-- main -->
+  <main class="main-content">
+    <!-- stats banner -->
+    <div class="stats-banner-wrapper">
+      <div class="container">
+        <div class="stats-banner">
+          <div class="user-details">
+            <p class="user-name">N/A</p>
+            <p class="email">N/A</p>
+          </div>
+          <div class="stat-favorite-categories">
+            <p class="stat-value categories-number">n/a</p>
+            <p class="stat-title">Favorite Categories</p>
+          </div>
+          <div class="stat-saved-contents">
+            <p class="stat-value contents-number">n/a</p>
+            <p class="stat-title">Saved Contents</p>
+          </div>
+          <a href="javascript:;" class="btn btn-cover-photo">
+            <span class="icons icon-camera"></span>
+            <span>Cover Photo</span>
+          </a>
+          <input class="upload-user-img" type="file">
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" data-tabs="personal-vault">
+      <!-- tabs navigation -->
+      <div class="gradient-row">
+        <div class="container">
+          <ul class="tabs-nav" data-tabs-navigation="personal-vault">
+            <li class="tabs-title"><a href="javascript:;" class="is-active" data-tab-target="#tab-saved-content">My
+              Saved Content</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-fav-tech-providers">Favorite Tech.
+              Providers</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-activity">My Activity</a></li>
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-settings">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="search-filter-sort-row-wrapper">
+        <div class="container">
+          <div class="search-filter-sort-row">
+            <div class="search-box">
+              <input type="text" class="input-search" placeholder="Search Provider posts"/>
+              <span class="icons icon-search"></span>
+            </div>
+            <div class="filter-wrapper" data-popup="filter-panel">
+              <a href="javascript:;" class="btn btn-primary btn-filter" data-popup-trigger><span
+                  class="icons icon-filter"></span><span>Filter</span></a>
+              <div class="popup-box filter-panel" data-popup-content>
+                <div class="popup-head">
+                  <h3>Filter Options</h3>
+                  <a href="javascript:;" class="icons icon-close-grey-2" data-close-popup></a>
+                </div>
+                <div class="popup-body">
+                  <div data-sub-filter="category" id="save-statues">
+                    <h3>Status :</h3>
+                    <ul class="filter-categories-list">
+                      <li class="master-check">
+                        <label class="checkbox">
+                          <input type="checkbox" data-id="expired" class="category-checkbox" name="filter-checkbox"/>
+                          <span class="icon-checkbox"></span>
+                          <span class="checkbox-label">Expired</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="checkbox">
+                          <input type="checkbox" data-id="active" class="category-checkbox" name="filter-checkbox"/>
+                          <span class="icon-checkbox"></span>
+                          <span class="checkbox-label">Active</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                  <div data-sub-filter="published-date">
+                    <h3 id="date-range-name">Created Date :</h3>
+                    <div class="date-range-wrapper">
+                      <div class="from-date">
+                        <span class="txt">From</span>
+                        <input type="text" id="startDate" name="startDate" placeholder="yyyy-mm-dd"/>
+                      </div>
+                      <div class="to-date">
+                        <span class="txt">To</span>
+                        <input type="text" id="endDate" name="endDate" placeholder="yyyy-mm-dd"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="buttons-row">
+                  <a href="javascript:;" class="btn btn-reset"><span>Reset</span></a>
+                  <a href="javascript:;" class="btn btn-primary btn-filter-action"
+                     data-close-popup><span>Filter</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-sort-by-wrapper">
+              <span class="txt">Sort By</span>
+              <div class="dropdown dropdown-sort-by">
+                <a href="javascript:;" class="btn btn-dropdown">
+                  <span class="selected-option">Date created</span><span class="icons icon-dropdown-caret-1"></span>
+                </a>
+                <div class="dropdown-menu">
+                  <ul>
+                    <li class="selected-option"><a href="javascript:;">Date created</a></li>
+                    <li><a href="javascript:;">Reading Time</a></li>
+                    <li><a href="javascript:;">Tech. Provider</a></li>
+                    <li><a href="javascript:;">Article Length</a></li>
+                    <li><a href="javascript:;">Alphabetical</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- tabs content -->
+      <div class="tabs-content" data-tabs-content="personal-vault">
+        <div class="tabs-panel is-active" id="tab-saved-content">
+          <div class="saved-content-wrapper" data-load-more>
+            <div class="container clearfix">
+              <h3 class="tab-heading">My Saved Content</h3>
+              <ul class="saved-content-list" data-load-more-list data-sortable data-filterable-sortable>
+              </ul>
+              <br/>
+              <br/>
+              <a href="javascript:;" class="btn btn-load-more save-post-btn-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab fav tech providers -->
+        <div class="tabs-panel" id="tab-fav-tech-providers">
+          <div class="fav-tech-providers-wrapper" data-load-more>
+            <div class="container">
+              <h3 class="tab-heading">Favorite Tech. Providers</h3>
+              <ul class="tech-providers-list" data-load-more-list data-filterable-sortable>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab your activity -->
+        <div class="tabs-panel" id="tab-activity">
+          <div class="your-activities-wrapper">
+            <div class="container">
+              <h3 class="tab-heading">Your Activity</h3>
+              <ul class="your-activity-list" data-filterable-sortable>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- tab settings -->
+        <div class="tabs-panel" id="tab-settings">
+          <div class="settings-wrapper">
+            <div class="container">
+              <h3 class="tab-heading">Settings</h3>
+              <ul class="settings-list">
+                <li data-setting="change-password">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Change password</h3>
+                  <div class="user-input">
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="Current Password" name="current-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="New Password" name="new-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                    <div class="input-password-wrapper">
+                      <input type="password" placeholder="Confirm New Password" name="confirm-new-password"/>
+                      <a href="javascript:;" class="icons icon-password"></a>
+                    </div>
+                  </div>
+                  <button class="btn-change-password">Change password</button>
+                </li>
+                <li data-setting="update-fav-categories">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Update Favorite Categories of Technologies to appear on Dashboard</h3>
+                  <ul class="tech-interests-list">
+                  </ul>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me when a New content is posted by any of my favorite Tech.
+                    Providers</h3>
+                  <label class="toggle-switch">
+                    <input data-type="notifyMeByPostCreated" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me when a New content is updated by the Provider</h3>
+                  <label class="toggle-switch">
+                    <input data-type="notifyMeByPostUpdated" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+                <li data-setting="notify">
+                  <span class="colored-dot"></span>
+                  <h3 class="setting-heading">Notify me of upcoming virtual tradeshows and webinars</h3>
+                  <label class="toggle-switch">
+                    <input data-type="notifyMeUpcomingEvent" type="checkbox">
+                    <span class="toggle-handle"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

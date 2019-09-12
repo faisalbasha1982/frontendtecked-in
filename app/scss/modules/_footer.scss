@@ -1,0 +1,132 @@
+
+#main-footer {
+
+  /*** footer top ***/
+  .footer-top-wrapper {
+    background-color: $bg-footer-top;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 33px 10% 31px;
+
+    .logo {
+      display: block;
+      margin-bottom: 22px;
+
+      img {
+        width: 153.5px;
+        height: 75px;
+      }
+    }
+
+    .social-links {
+      display: flex;
+
+      > a {
+        margin: 0 12px;
+        @include icon(30px, 30px);
+      }
+
+      .facebook {
+        background-image: url(../img/icons/social-icons/icon-facebook.svg);
+      }
+
+      .google-plus {
+        background-image: url(../img/icons/social-icons/icon-google-plus.svg);
+      }
+
+      .twitter {
+        background-image: url(../img/icons/social-icons/icon-twitter.svg);
+      }
+
+      .linked-in {
+        background-image: url(../img/icons/social-icons/icon-linked-in.svg);
+      }
+    }
+  }
+
+  /*** footer bottom ***/
+  .footer-bottom-wrapper {
+    background-color: $bg-footer-bottom;
+  }
+
+  .footer-bottom {
+    padding: 23px 10% 19px;
+    font-family: $font-secondary;
+    font-size: 11px;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+
+    .contact-info {
+      margin-bottom: 10px;
+
+      a {
+        color: #fff;
+      }
+
+      .sep {
+        display: inline-block;
+        padding: 0 4px;
+      }
+    }
+    .links{
+      color: #448dae;
+    }
+  }
+}
+
+
+@include respond-to(small) {
+
+  #main-footer {
+
+    .footer-bottom {
+      font-size: 12px;
+    }
+  }
+}
+
+
+@include respond-to(medium) {
+
+  #main-footer {
+
+    .footer-top {
+      padding: 50px 10% 44px;
+
+      .logo {
+        margin-bottom: 28px;
+
+        img {
+          width: 231px;
+          height: 113px;
+        }
+      }
+
+      .social-links {
+
+        > a {
+          margin: 0 17px;
+          @include icon(44px, 44px);
+        }
+      }
+    }
+
+    .footer-bottom {
+      padding: 32px 10% 24px;
+      font-size: 14px;
+
+      .contact-info {
+        margin-bottom: 12px;
+
+        .sep {
+          padding: 0 6px;
+        }
+      }
+    }
+  }
+}

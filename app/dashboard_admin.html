@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>TECKEDIN - CONTENT MANAGEMENT PLATFORM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+  <!-- stylesheets -->
+  <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+  <link href="bower_components/nprogress/nprogress.css" rel='stylesheet'/>
+  <link href="bower_components/sweetalert2/dist/sweetalert2.min.css" rel='stylesheet'/>
+  <link href="bower_components/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet" type="text/css"/>
+  <!-- select2 -->
+  <link href="bower_components/select2/dist/css/select2.min.css" rel='stylesheet'/>
+
+  <!-- scripts -->
+  <script src="js/lib/core-2.4.1.js" defer></script>
+  <script src="bower_components/nprogress/nprogress.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/sweetalert2/dist/sweetalert2.all.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/select2/dist/js/select2.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/jquery-toast-plugin/dist/jquery.toast.min.js" type="text/javascript" defer></script>
+  <script src="bower_components/moment/min/moment.min.js" defer></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
+  <script src="js/api.js" type="text/javascript" defer></script>
+  <script src="js/pages/post-filter-component.js" defer></script>
+  <script src="js/pages/admin-common.js" type="text/javascript" defer></script>
+  <script src="js/pages/admin-dashboard.js" type="text/javascript" defer></script>
+
+</head>
+<body id="page-admin-dashboard" data-role="admin" class="page-dashboard-admin page-dashboard"
+      data-nav-side-panel="false">
+
+<!-- page wrapper -->
+<div class="page-wrapper">
+  <!-- main -->
+  <main class="main-content">
+    <!-- stats banner -->
+    <div class="stats-banner-wrapper">
+      <div class="container">
+        <div class="stats-banner">
+          <ul class="stats-list">
+            <li class="number-of-subscribes">
+              <p class="stat-value color-green">
+                <span class="short-txt">N/A</span>
+                <span class="long-txt">N/A</span>
+              </p>
+              <p class="stat-title">Number of Provider</p>
+            </li>
+            <li class="stat-active-users">
+              <p class="stat-value color-blue">N/A</p>
+              <p class="stat-title">Number of User</p>
+            </li>
+            <li class="number-of-favorite">
+              <p class="stat-value color-orange">N/A</p>
+              <p class="stat-title">Number of Content</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs" data-tabs="content-feed">
+      <!-- tabs navigation -->
+      <div class="gradient-row">
+        <div class="container">
+          <ul class="tabs-nav" data-tabs-navigation="content-feed">
+            <li class="tabs-title"><a href="javascript:;" data-tab-target="#tab-all-contents">All contents</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- tabs content -->
+      <div class="tabs-content" data-tabs-content="content-feed">
+
+
+        <!-- tab most read -->
+        <div class="tabs-panel" id="tab-all-contents">
+          <!-- content feed -->
+          <div id="post-filter-container"></div>
+          <div class="content-feed-wrapper" data-load-more data-filterable-sortable>
+            <div class="container clearfix">
+              <h3 class="tab-heading">All contents</h3>
+
+              <div class="table all-contents-table">
+                <div class="header">
+                  <div class="item flex4">Title</div>
+                  <div class="item flex1">Category</div>
+                  <div class="item flex1">Provider</div>
+                  <div class="item flex1">Status</div>
+                  <div class="item flex1">Published At</div>
+                  <div class="item flex1">Actions</div>
+                </div>
+                <div class="no-records"><span>No Content records</span></div>
+                <div class="all-contents-table-body">
+
+                </div>
+              </div>
+
+              <ul class="content-feed-list" id="most-content-feed-list" data-load-more-list>
+              </ul>
+              <a href="javascript:;" class="btn btn-load-more all-btn-more"><span>Load More</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<!-- page-wrapper ends -->
+</body>
+</html>

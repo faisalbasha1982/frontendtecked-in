@@ -1,0 +1,160 @@
+@import "../helpers/mixins";
+
+.search-filter-sort-row-wrapper .container {
+  padding: 0 8px;
+}
+
+.search-filter-sort-row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px 0 21px;
+
+  .search-box {
+    margin-bottom: 8px;
+  }
+
+  .dropdown-sort-by-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+
+    .txt {
+      font-size: 11px;
+      color: #282828;
+      margin-right: 12px;
+    }
+
+    .dropdown-sort-by {
+      flex-grow: 1;
+
+      .btn-dropdown {
+
+        .selected-option {
+          color: #939393;
+        }
+      }
+    }
+  }
+
+  .filter-wrapper {
+    position: relative;
+    order: 1;
+    margin-left: 7px;
+    align-items: center;
+    .filter-input{
+      display: flex;
+      margin-bottom: 10px;
+      flex-direction: row;
+      .txt{
+        line-height: 35px;
+        width: 130px;
+      }
+      input{
+        flex:1;
+        height: 35px;
+      }
+    }
+    .btn-filter {
+      width: 86px;
+
+      .icon-filter {
+        margin-right: 9px;
+      }
+    }
+  }
+}
+
+
+
+@include respond-to(sss) {
+  .search-filter-sort-row-wrapper {
+  }
+
+  .search-filter-sort-row {
+    justify-content: flex-end;
+    .dropdown-sort-by-wrapper {
+      .txt{
+        margin-right: 6px;
+        margin-left: 6px;
+      }
+      margin-bottom: 12px;
+    }
+    .filter-wrapper{
+      margin-left: 12px;
+    }
+  }
+}
+
+@include respond-to(small) {
+
+  .search-filter-sort-row-wrapper {
+    box-shadow: 0 5px 3px 0 rgba(1, 1, 1, 0.02);
+  }
+
+  .search-filter-sort-row {
+    flex-wrap: nowrap;
+    padding: 11px 13px 13px 13px;
+
+    .filter-wrapper{
+      margin-left: 7px;
+      margin-top: 0;
+    }
+
+    .search-box {
+      width: auto;
+      flex-grow: 1;
+      margin-bottom: 0;
+      height: 33px;
+    }
+
+    .filter-wrapper {
+      order: 0;
+      margin-left: 16px;
+    }
+
+    .dropdown-sort-by-wrapper {
+      margin-left: 21px;
+      flex-grow: 0;
+
+      .dropdown-sort-by {
+        min-width: 126px;
+      }
+    }
+  }
+}
+
+
+
+@include respond-to(medium) {
+
+  .search-filter-sort-row-wrapper .container {
+    padding: 0 20px;
+  }
+
+  .search-filter-sort-row {
+
+    .search-box {
+      height: 41px;
+    }
+
+    .dropdown-sort-by-wrapper {
+
+      .txt {
+        font-size: 14px;
+      }
+    }
+
+    .filter-wrapper {
+
+      .btn-filter {
+        width: 106px;
+        font-size: 14px;
+
+        .icon-filter {
+          margin-right: 11px;
+        }
+      }
+    }
+  }
+
+}

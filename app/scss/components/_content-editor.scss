@@ -1,0 +1,41 @@
+
+.trumbowyg-box {
+  min-height: 240px;
+  margin: 0;
+  border: 0;
+  
+  .trumbowyg-button-pane {
+    background: #f1f1f1;
+    border: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 0;
+    height: 40px;
+    
+    &:after {
+      display: none;
+    }
+  }
+  
+  .trumbowyg-editor {
+    border: 1px solid #e4e4e4;
+    padding: 12px;
+    position: relative;
+    top: -1px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+}
+
+
+@include respond-to(medium) {
+  
+  .trumbowyg-box {
+    min-height: 384px;
+    
+    .trumbowyg-button-pane {
+      height: 43px;
+    }
+  }
+  
+}

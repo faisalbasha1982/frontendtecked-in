@@ -1,0 +1,162 @@
+// set base settings and make everything box-sizing border-box
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  line-height: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: $primary-text-color;
+  background-color: #fff;
+}
+
+html, body {
+  overflow-x:hidden
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.disabled {
+  background-color: #f4f4f4 !important;
+}
+
+
+/*** to fix IE scrollbar issue ***/
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+input, textarea {
+  font-family: $font-primary;
+}
+
+input, input:focus {
+  width: auto;
+  font-weight: 400;
+  font-size: 13px;
+  color: $primary-text-color;
+  background-color: #fff;
+  border: 1px solid $input-border-color;
+  border-radius: 2px;
+  margin: 0;
+  padding: 0 14px;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+
+  @include input-placeholder($input-placeholder-color, 400);
+
+  &::-ms-clear, &::-ms-reveal {
+    display: none;
+  }
+}
+
+textarea, textarea:focus {
+  background-color: #fff;
+  color: $primary-text-color;
+  resize: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+
+  @include input-placeholder($input-placeholder-color, 400);
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*** for touch screens ***/
+[data-whatinput="touch"] {
+
+  a:hover, .btn:hover, button:hover {
+    opacity: 1;
+  }
+}
+
+.main-content {
+  background-color: $bg-main-content-mobile;
+}
+
+.gradient-row {
+  background: $bg-gradient;
+}
+
+/*** container - content max-width ***/
+.container {
+  max-width: 1104px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+/*** to align single item in center of its container ***/
+.align-item-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*** text over flow ellipsis ***/
+.overflow-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none !important;
+}
+
+@include respond-to(medium) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .main-content {
+    background-color: $bg-main-content-desktop;
+  }
+
+  input[type=text], input[type=password], input[type=text]:focus, input[type=password]:focus {
+    font-size: 14px;
+    border-radius: 3px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}

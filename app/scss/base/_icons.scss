@@ -1,0 +1,346 @@
+/*** common icons ***/
+
+.icons {
+  display: inline-block;
+
+  &.icon-password {
+    background: url(../img/icons/icon-password.svg) no-repeat;
+    @include icon(14px, 9px);
+
+    @include respond-to(medium) {
+      @include icon(17px, 11px);
+    }
+  }
+
+  &.icon-search {
+    background: url(../img/icons/icon-search.svg) no-repeat;
+    @include icon(15px, 16px);
+
+    @include respond-to(medium) {
+      @include icon(19px, 20px)
+    }
+  }
+
+  &.icon-question-help {
+    background: url(../img/icons/icon-question-help.svg) no-repeat;
+    margin-left: 22px;
+    @include icon(25px, 25px);
+
+    @include respond-to(medium) {
+      @include icon(20px, 20px)
+    }
+  }
+
+  &.icon-notification {
+    background: url(../img/icons/icon-notification.svg) no-repeat;
+    @include icon(24px, 28px);
+
+    @include respond-to(medium) {
+      @include icon(19px, 22px);
+    }
+  }
+
+  &.icon-logout {
+    background: url(../img/icons/icon-logout.svg) no-repeat;
+
+    @include respond-to(medium) {
+      @include icon(22px, 22.5px);
+    }
+  }
+
+  &.icon-toggle-sidebar {
+    background: url(../img/icons/icon-toggle-sidebar.svg) no-repeat;
+    @include icon(24px, 17.5px);
+  }
+
+  &.icon-filter {
+    background: url(../img/icons/icon-filter.svg) no-repeat;
+    @include icon(13px, 11px);
+
+    @include respond-to(medium) {
+      @include icon(16px, 14px);
+    }
+  }
+
+  &.icon-dropdown-caret-1 {
+    background: url(../img/icons/icon-dropdown-1.svg) no-repeat;
+    @include icon(8.5px, 4.5px);
+
+    @include respond-to(medium) {
+      @include icon(10.5px, 6px);
+    }
+  }
+
+  &.icon-dropdown-caret-2 {
+    background: url(../img/icons/icon-dropdown-2.svg) no-repeat;
+    @include icon(7px, 4.5px);
+
+    @include respond-to(medium) {
+      @include icon(9px, 6px);
+    }
+  }
+
+  &.icon-dropdown-caret-3 {
+    background: url(../img/icons/icon-dropdown-3.svg) no-repeat;
+    @include icon(10px, 6px);
+
+    @include respond-to(medium) {
+      @include icon(12px, 7px);
+    }
+  }
+
+  &.icon-close-grey {
+    background: url(../img/icons/icon-close-grey.svg) no-repeat;
+    @include icon(10px, 10px);
+
+    @include respond-to(medium) {
+      @include icon(13px, 13px);
+    }
+  }
+
+  &.icon-close-grey-2 {
+    background: url(../img/icons/icon-close-grey-2.svg) no-repeat;
+    @include icon(10px, 10px);
+
+    @include respond-to(medium) {
+      @include icon(13px, 13px);
+    }
+  }
+
+  &.icon-close-white {
+    background: url(../img/icons/icon-close-white.svg) no-repeat;
+    @include icon(10px, 10px);
+
+    @include respond-to(medium) {
+      @include icon(13px, 13px);
+    }
+  }
+
+  &.icon-tick {
+    background: url(../img/icons/icon-tick.svg) no-repeat;
+    @include icon(9.5px, 7px);
+
+    @include respond-to(medium) {
+      @include icon(10.5px, 8px);
+    }
+  }
+
+  &.icon-category {
+    background: url(../img/icons/icon-category.svg) no-repeat;
+    @include icon(15px, 15px);
+  }
+
+  &.icon-calendar {
+    background: url(../img/icons/icon-calendar.svg) no-repeat;
+    @include icon(13.5px, 13.5px);
+
+    @include respond-to(medium) {
+      @include icon(12.5px, 12.5px);
+    }
+  }
+
+  &.icon-views {
+    background: url(../img/icons/icon-views.svg) no-repeat;
+    @include icon(17px, 10.5px);
+
+    @include respond-to(medium) {
+      @include icon(16px, 10px);
+    }
+  }
+
+  &.icon-play {
+    background: url(../img/icons/icon-play.svg) no-repeat;
+    @include icon(12px, 14px);
+
+    @include respond-to(medium) {
+      @include icon(13px, 15px);
+    }
+  }
+
+  &.icon-camera {
+    background: url(../img/icons/icon-camera.svg) no-repeat;
+    @include icon(14px, 12px);
+
+    @include respond-to(medium) {
+      @include icon(19px, 16px);
+    }
+  }
+
+  &.icon-expand-collapse {
+    background: url(../img/icons/icon-expand-collapse.svg) no-repeat;
+    @include icon(13.5px, 8px);
+
+    @include respond-to(medium) {
+      @include icon(15px, 9px);
+    }
+  }
+
+  &.icon-sign-in {
+    background: url(../img/icons/icon-sign-in.svg) no-repeat;
+    @include icon(24px, 21.5px);
+
+    @include respond-to(medium) {
+      @include icon(28px, 25px);
+    }
+  }
+
+  &.icon-search-tech {
+    background: url(../img/icons/icon-search-tech.svg) no-repeat;
+    @include icon(30.5px, 28.5px);
+
+    @include respond-to(medium) {
+      @include icon(36px, 33.5px);
+    }
+  }
+
+  &.icon-save-content {
+    background: url(../img/icons/icon-save-content.svg) no-repeat;
+    @include icon(25px, 28.5px);
+
+    @include respond-to(medium) {
+      @include icon(29px, 34px);
+    }
+  }
+
+  &.icon-sign-up {
+    background: url(../img/icons/icon-sign-up.svg) no-repeat;
+    @include icon(27px, 24.5px);
+
+    @include respond-to(medium) {
+      @include icon(33px, 30.5px);
+    }
+  }
+
+  &.icon-upload-content {
+    background: url(../img/icons/icon-upload-content.svg) no-repeat;
+    @include icon(22px, 30px);
+
+    @include respond-to(medium) {
+      @include icon(25.5px, 34px);
+    }
+  }
+
+  &.icon-advertise {
+    background: url(../img/icons/icon-advertise.svg) no-repeat;
+    @include icon(39px, 25.5px);
+
+    @include respond-to(medium) {
+      @include icon(44px, 31px);
+    }
+  }
+
+  //category icons
+  &.icon-enterprise {
+    background: url(../img/icons/category-icons/icon-enterprise.svg) no-repeat;
+    @include icon(60px, 57.5px);
+
+    @include respond-to(medium) {
+      @include icon(80px, 76px);
+    }
+  }
+
+  &.icon-analytics {
+    background: url(../img/icons/category-icons/icon-analytics.svg) no-repeat;
+    @include icon(64.5px, 46.5px);
+
+    @include respond-to(medium) {
+      @include icon(86px, 61.5px);
+    }
+  }
+
+  &.icon-cloud {
+    background: url(../img/icons/category-icons/icon-cloud.svg) no-repeat;
+    @include icon(75px, 56px);
+
+    @include respond-to(medium) {
+      @include icon(100px, 74.5px);
+    }
+  }
+
+  &.icon-iot {
+    background: url(../img/icons/category-icons/icon-IOT.svg) no-repeat;
+    @include icon(60px, 58px);
+
+    @include respond-to(medium) {
+      @include icon(80px, 77px);
+    }
+  }
+
+  &.icon-risk-security {
+    background: url(../img/icons/category-icons/icon-risk_security.svg) no-repeat;
+    @include icon(65px, 54.5px);
+
+    @include respond-to(medium) {
+      @include icon(86px, 72.5px);
+    }
+  }
+
+  &.icon-mobility {
+    background: url(../img/icons/category-icons/icon-mobility.svg) no-repeat;
+    @include icon(68px, 48px);
+
+    @include respond-to(medium) {
+      @include icon(90px, 63.5px);
+    }
+  }
+
+  &.icon-network {
+    background: url(../img/icons/category-icons/icon-network.svg) no-repeat;
+    @include icon(67px, 59px);
+
+    @include respond-to(medium) {
+      @include icon(89.5px, 78.5px);
+    }
+  }
+
+  &.icon-storage {
+    background: url(../img/icons/category-icons/icon-storage.svg) no-repeat;
+    @include icon(71.5px, 51.5px);
+
+    @include respond-to(medium) {
+      @include icon(95px, 68.5px);
+    }
+  }
+
+  &.icon-prev {
+    background: url(../img/icons/icon-play.svg) no-repeat;
+    transform: rotate(180deg);
+    @include icon(6.5px, 10px);
+
+    @include respond-to(medium) {
+      @include icon(7.5px, 11.5px);
+    }
+  }
+
+  &.icon-next {
+    background: url(../img/icons/icon-play.svg) no-repeat;
+    @include icon(6.5px, 10px);
+
+    @include respond-to(medium) {
+      @include icon(7.5px, 11.5px);
+    }
+  }
+
+  &.icon-back {
+    background: url(../img/icons/icon-back.svg) no-repeat;
+    @include icon(13px, 21px);
+  }
+
+  &.icon-save-to-vault {
+    background: url(../img/icons/icon-save-white.svg) no-repeat;
+    @include icon(17px, 17px);
+
+    @include respond-to(medium) {
+      @include icon(20px, 20px);
+    }
+  }
+
+  &.icon-favorite {
+    background: url(../img/icons/icon-favorite.svg) no-repeat;
+    @include icon(17px, 16px);
+
+    @include respond-to(medium) {
+      @include icon(23px, 21px);
+    }
+  }
+}

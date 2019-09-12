@@ -1,0 +1,14 @@
+
+.membership-plans-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@include respond-to(medium) {
+  
+  .membership-plans-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

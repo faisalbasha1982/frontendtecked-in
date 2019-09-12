@@ -1,0 +1,479 @@
+@import "../helpers/mixins";
+
+#page-tech-provider-details {
+
+  .main-content-wrapper {
+
+    .container {
+      padding: 0;
+      max-width: 1064px;
+    }
+  }
+
+  .stats-banner {
+    width: 100%;
+    background: url(../img/bg-dashboard-banner.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 35px 15px 45px;
+    color: #fff;
+
+    .provider-details {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 40px; //todo
+
+      .provider-logo {
+        @extend .align-item-center;
+        margin: 0 auto 25px;
+        border-radius: 2px;
+        overflow: hidden;
+        img {
+          height: 120px;
+          max-width: 240px;
+          width: auto;
+          border: 2px solid white;
+          border-radius: 5px;
+          background-color: white;
+        }
+
+        .upload-provider-img-container {
+          position: absolute;
+          display: flex;
+          width: 121px;
+          height: 112px;
+          align-items: flex-end;
+          justify-content: center;
+          .bg {
+            background-color: #4c4c4c;
+            border-radius: 5px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.5;
+            .upload-provider-img {
+              position: absolute;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+
+      .provider-name {
+        font-size: 17px;
+        font-weight: 500;
+        margin-bottom: 13px;
+      }
+
+      .registered-on {
+        font-size: 13px;
+
+        .date {
+          color: #cacaca;
+        }
+      }
+    }
+
+    .stat-reading-time-content, .stat-total-posts {
+      width: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .stat-value {
+        font-size: 54px;
+        font-weight: 500;
+        margin-bottom: 5px;
+
+        .long-txt {
+          display: none;
+        }
+      }
+
+      .stat-title {
+        font-size: 11px;
+      }
+    }
+    @include respond-to(only-very-small) {
+      .stat-reading-time-content, .stat-total-posts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .stat-title {
+          width: 120px;
+        }
+      }
+    }
+
+    .stat-reading-time-content {
+      position: relative;
+
+      .stat-value {
+        color: #2bd99d;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        right: 0;
+        bottom: -7px;
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    .stat-total-posts {
+
+      .stat-value {
+        color: #fba239;
+      }
+    }
+  }
+
+  .tabs {
+
+    .tabs-nav {
+      padding-left: 20px;
+    }
+
+    .tabs-content {
+      padding: 0 7px;
+    }
+  }
+
+  .dropdown-select2{
+    .select2-container{
+      height: 32px !important;
+      .select2-selection__rendered{
+        font-size: 14px;
+        line-height: 30px;
+      }
+      .select2-selection__arrow {
+        top: 5px !important;
+        right: 8px !important;
+      }
+    }
+  }
+
+  // tab provider posts
+  #tab-provider-posts {
+
+    .content-feed-wrapper {
+
+      .content-feed-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .content-feed-box {
+          height: 462px;
+          margin-bottom: 15px;
+
+          .feed-name {
+            margin-bottom: 11px;
+          }
+        }
+      }
+
+      .btn-load-more {
+        margin: 20px auto 36px;
+      }
+    }
+
+  }
+
+  // tab about provider
+  #tab-about-provider {
+    padding: 20px;
+
+    .edit-btn {
+      height: 30px;
+      width: 100px;
+      float: right;
+      border: none;
+      border-radius: 5px;
+      background-color: #2b8bc0;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .update-provider-form {
+
+      .btn:not(.btn-dropdown) {
+        border-radius: 4px;
+        height: 40px;
+      }
+
+      .user-input {
+        margin-bottom: 20px;
+        .title {
+          margin-top: 40px;
+          margin-bottom: 10px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        [data-input] {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          .label {
+            font-size: 14px;
+            color: #282828;
+          }
+
+          input {
+            width: 100%;
+            border-radius: 4px;
+            height: 40px;
+          }
+
+          textarea {
+            width: 100%;
+            border-radius: 4px;
+            height: 80px;
+            font-size: 14px;
+            padding: 5px;
+            border: 1px solid #d8d8d8;
+          }
+        }
+      }
+
+      .buttons-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .btn-cancel {
+          margin-right: 20px;
+        }
+        .btn {
+          font-size: 17px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.4;
+    }
+
+    .inner-box{
+      margin-left: 20px;
+    }
+    .info-box {
+      margin-bottom: 15px;
+
+      .info-heading {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .website-link {
+        color: $link-text-color;
+        line-height: 1.4;
+      }
+    }
+  }
+
+}
+
+@include respond-to(medium) {
+
+  #page-tech-provider-details {
+
+    .main-content-wrapper {
+      padding-bottom: 140px;
+
+      .container {
+        background-color: #fbfbfb;
+        box-shadow: $box-shadow;
+        border-radius: 3px;
+      }
+    }
+
+    .search-filter-sort-row-wrapper {
+      padding: 0 16px;
+    }
+
+    .stats-banner {
+      flex-wrap: nowrap;
+      padding: 31px 30px 27px;
+
+      .provider-details {
+        width: 24%;
+        margin-bottom: 0;
+        order: 2;
+
+        .provider-logo {
+          margin-bottom: 13px;
+        }
+
+        .provider-name {
+          font-size: 18px;
+          margin-bottom: 14px;
+        }
+
+        .registered-on {
+          font-size: 14px;
+        }
+      }
+
+      .stat-reading-time-content, .stat-total-posts {
+        width: 38%;
+        order: 3;
+
+        .stat-value {
+          font-size: 72px;
+          margin-bottom: 15px;
+
+          .short-txt {
+            display: none;
+          }
+
+          .long-txt {
+            display: inline;
+          }
+        }
+
+        .stat-title {
+          font-size: 15px;
+        }
+      }
+
+      .stat-reading-time-content {
+        order: 1;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .dropdown-select2{
+      .select2-container{
+        height: 38px !important;
+        .select2-selection__rendered{
+          line-height: 36px;
+        }
+        .select2-selection__arrow {
+          top: 6px !important;
+          right: 8px !important;
+        }
+      }
+    }
+
+    .tabs {
+
+      .tabs-nav {
+        padding-left: 38px;
+      }
+
+      .tabs-content {
+        padding: 0;
+      }
+    }
+
+    // tab provider posts
+    #tab-provider-posts {
+      position: relative;
+
+      .content-feed-wrapper {
+
+        .content-feed-list {
+          padding-top: 34px;
+          justify-content: space-around;
+
+          .content-feed-box {
+            width: 307px;
+            height: 436px;
+            margin-bottom: 40px;
+
+            .bg-image {
+              height: 172px;
+            }
+
+            .feed-content {
+              padding: 21px 26px 20px;
+
+              .feed-name {
+                font-size: 15px;
+                margin-bottom: 16px;
+              }
+
+              .feed-txt {
+                height: 80px;
+                font-size: 12px;
+              }
+
+              .time-to-read {
+                font-size: 11px;
+                line-height: 15px;
+
+                .time {
+
+                  span {
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+
+            .category-details {
+              height: 47px;
+              padding: 0 25px;
+              font-size: 11px;
+
+              .category-name {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        .btn-load-more {
+          position: absolute;
+          width: 140px;
+          height: 46px;
+          margin: 0;
+          bottom: -90px;
+          left: calc(50% - 70px);
+        }
+      }
+
+    }
+
+    // tab about provider
+    #tab-about-provider {
+      padding: 30px;
+
+      .info-box {
+        margin-bottom: 20px;
+
+        .info-heading {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(large) {
+
+  #page-tech-provider-details {
+
+    .main-content-wrapper {
+      padding-top: 30px;
+    }
+  }
+}
